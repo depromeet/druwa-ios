@@ -1,2 +1,2 @@
-# 7th-team6-iOS
-6조 파이널 iOS 
+# 7th-team7-iOS
+7조 파이널 iOS 
