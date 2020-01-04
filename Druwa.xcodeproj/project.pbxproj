@@ -14,6 +14,7 @@
 		EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0323B260670031A604 /* LaunchScreen.storyboard */; };
 		EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; };
 		EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE5FE54123BCACD8008D8A15 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5FE54023BCACD8008D8A15 /* ButtonView.swift */; };
 		EEB41C1A23B30E2200D7C4BD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1923B30E2200D7C4BD /* IntroViewController.swift */; };
 		EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */; };
 		EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */; };
@@ -51,6 +52,7 @@
 		EE1B3C0623B260670031A604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE1B3C0E23B268A00031A604 /* Druwa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Druwa-Bridging-Header.h"; sourceTree = "<group>"; };
 		EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		EE5FE54023BCACD8008D8A15 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EEB41C1923B30E2200D7C4BD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				EED68F6A23B646D1000E4705 /* TitleCell.swift */,
 				EED68F6B23B646D1000E4705 /* TitleCell.xib */,
 				EED68F6E23B64D8C000E4705 /* ProfileVIew.swift */,
+				EE5FE54023BCACD8008D8A15 /* ButtonView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */,
 				EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */,
 				EED68F6823B64634000E4705 /* TextFieldCell.swift in Sources */,
+				EE5FE54123BCACD8008D8A15 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

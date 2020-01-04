@@ -20,22 +20,44 @@ class SignUpViewController: UIViewController {
     }
     
     func configurationFromTableView() {
+        let headerView: ProfileVIew =  ProfileVIew()
+        tableView.tableHeaderView = headerView
+        let footerView: ButtonView = ButtonView()
+        footerView.button.addTarget(self, action: #selector(pressedSignUpButton(_:)), for: .touchUpInside)
+        tableView.tableFooterView = footerView
         tableView.register(UINib(nibName: "TextFieldCell", bundle: nil), forCellReuseIdentifier: "TextFieldCell")
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if let headerView = tableView.tableHeaderView {
+            var headerFrame = headerView.frame
+            headerFrame.size.height = 60.0
+            headerView.frame = headerFrame
+            tableView.tableHeaderView = headerView
+        }
+        
+        if let footerView = tableView.tableFooterView {
+           var footerFrame = footerView.frame
+           footerFrame.size.height = 60.0
+           footerView.frame = footerFrame
+           tableView.tableFooterView = footerView
+        }
+    }
+    
+    @objc func pressedSignUpButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let mainViewController: MainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
+            let appdelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+            appdelegate.window?.rootViewController = mainViewController
+        }
     }
 }
 
 extension SignUpViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let profileView: ProfileVIew =  ProfileVIew()
-        return profileView
     }
 }
 
