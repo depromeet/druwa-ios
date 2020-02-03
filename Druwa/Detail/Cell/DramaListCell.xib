@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DramaListCell" customModule="Druwa" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="292"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="356" height="292"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mT3-Wl-JZM">
+                        <rect key="frame" x="0.0" y="44" width="356" height="248"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lXt-QD-Yro">
+                                <rect key="frame" x="0.0" y="10" width="356" height="178"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="178" id="Ltz-pc-IP5"/>
+                                    <constraint firstAttribute="width" secondItem="lXt-QD-Yro" secondAttribute="height" multiplier="16:8" id="OWU-5k-AT2"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="d9c-MA-ZlC">
+                                <rect key="frame" x="10" y="196" width="336" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="최괴의 선물 EP.01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zI-b8-eBK">
+                                        <rect key="frame" x="0.0" y="0.0" width="336" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.97254901959999995" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="굳세어라 청춘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJS-pL-KiL">
+                                        <rect key="frame" x="0.0" y="19.5" width="336" height="24.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.97254901959999995" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078431372549019607" green="0.082352941176470587" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="d9c-MA-ZlC" secondAttribute="trailing" constant="10" id="Cw2-k5-ykb"/>
+                            <constraint firstItem="d9c-MA-ZlC" firstAttribute="leading" secondItem="mT3-Wl-JZM" secondAttribute="leading" constant="10" id="J7a-uk-OPj"/>
+                            <constraint firstItem="d9c-MA-ZlC" firstAttribute="top" secondItem="lXt-QD-Yro" secondAttribute="bottom" constant="8" id="L2e-1J-mND"/>
+                            <constraint firstItem="lXt-QD-Yro" firstAttribute="top" secondItem="mT3-Wl-JZM" secondAttribute="top" constant="10" id="meY-vO-joK"/>
+                            <constraint firstAttribute="trailing" secondItem="lXt-QD-Yro" secondAttribute="trailing" id="o25-Rv-7U0"/>
+                            <constraint firstAttribute="bottom" secondItem="d9c-MA-ZlC" secondAttribute="bottom" constant="8" id="x4q-K1-p1e"/>
+                            <constraint firstItem="lXt-QD-Yro" firstAttribute="leading" secondItem="mT3-Wl-JZM" secondAttribute="leading" id="zon-I8-w5S"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="mT3-Wl-JZM" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="0a7-Gt-gDH"/>
+                <constraint firstItem="mT3-Wl-JZM" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="UYc-2H-sRW"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="mT3-Wl-JZM" secondAttribute="bottom" id="nkj-nc-Sct"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="mT3-Wl-JZM" secondAttribute="trailing" id="xIo-xn-fAF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="356" height="292"/>
+            <point key="canvasLocation" x="82.608695652173921" y="81.696428571428569"/>
+        </collectionViewCell>
+    </objects>
+</document>

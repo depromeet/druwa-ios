@@ -14,11 +14,42 @@
 		EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0323B260670031A604 /* LaunchScreen.storyboard */; };
 		EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; };
 		EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */; };
+		EE1C071623DAE4BE00D0716D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071523DAE4BE00D0716D /* DetailViewController.swift */; };
+		EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071823DB077A00D0716D /* DramaListCell.swift */; };
+		EE1C071B23DB077A00D0716D /* DramaListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1C071923DB077A00D0716D /* DramaListCell.xib */; };
+		EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071E23DB0BDE00D0716D /* CommentCell.swift */; };
+		EE1C072123DB0BDE00D0716D /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1C071F23DB0BDE00D0716D /* CommentCell.xib */; };
+		EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE45DDD623E6B6E20074EFEF /* String+Extension.swift */; };
 		EE5FE54123BCACD8008D8A15 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5FE54023BCACD8008D8A15 /* ButtonView.swift */; };
+		EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */; };
+		EE711BE023E47ACE00B8E0AD /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE711BDF23E47ACE00B8E0AD /* NavigationBar.swift */; };
+		EE94A76523DB1B510030BF5F /* SubCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE94A76323DB1B510030BF5F /* SubCommentCell.swift */; };
+		EE94A76623DB1B510030BF5F /* SubCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE94A76423DB1B510030BF5F /* SubCommentCell.xib */; };
+		EE94A76B23DB242C0030BF5F /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE94A76923DB242C0030BF5F /* ReviewCell.swift */; };
+		EE94A76C23DB242C0030BF5F /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE94A76A23DB242C0030BF5F /* ReviewCell.xib */; };
+		EEA6A7A023E455470078A010 /* MainTopCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6A79E23E455470078A010 /* MainTopCell.swift */; };
+		EEA6A7A123E455470078A010 /* MainTopCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6A79F23E455470078A010 /* MainTopCell.xib */; };
+		EEA6A7A623E461640078A010 /* MainTopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6A7A423E461640078A010 /* MainTopCollectionViewCell.swift */; };
+		EEA6A7A723E461640078A010 /* MainTopCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6A7A523E461640078A010 /* MainTopCollectionViewCell.xib */; };
+		EEA6A7AC23E4699E0078A010 /* EpisodeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6A7AA23E4699E0078A010 /* EpisodeTableViewCell.swift */; };
+		EEA6A7AD23E4699E0078A010 /* EpisodeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6A7AB23E4699E0078A010 /* EpisodeTableViewCell.xib */; };
+		EEA6A7B023E46A2F0078A010 /* EpisodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6A7AE23E46A2F0078A010 /* EpisodeCollectionViewCell.swift */; };
+		EEA6A7B123E46A2F0078A010 /* EpisodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6A7AF23E46A2F0078A010 /* EpisodeCollectionViewCell.xib */; };
+		EEA6A7B423E4713E0078A010 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6A7B223E4713E0078A010 /* PostTableViewCell.swift */; };
+		EEA6A7B523E4713E0078A010 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6A7B323E4713E0078A010 /* PostTableViewCell.xib */; };
 		EEB41C1A23B30E2200D7C4BD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1923B30E2200D7C4BD /* IntroViewController.swift */; };
 		EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */; };
 		EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */; };
 		EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC2672423B3123B008CA938 /* MainViewController.swift */; };
+		EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */; };
+		EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* DruwaButton.swift */; };
+		EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */; };
+		EED0A1A623E86C7A004E0D04 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */; };
+		EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */; };
+		EED0A1AA23E86C8A004E0D04 /* FooterViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */; };
+		EED38D3A23DD377E00CE0245 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED38D3823DD377E00CE0245 /* PlayerCell.swift */; };
+		EED38D3B23DD377E00CE0245 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED38D3923DD377E00CE0245 /* PlayerCell.xib */; };
 		EED68F6823B64634000E4705 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED68F6623B64634000E4705 /* TextFieldCell.swift */; };
 		EED68F6923B64634000E4705 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED68F6723B64634000E4705 /* TextFieldCell.xib */; };
 		EED68F6C23B646D1000E4705 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED68F6A23B646D1000E4705 /* TitleCell.swift */; };
@@ -52,11 +83,42 @@
 		EE1B3C0623B260670031A604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE1B3C0E23B268A00031A604 /* Druwa-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Druwa-Bridging-Header.h"; sourceTree = "<group>"; };
 		EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		EE1C071523DAE4BE00D0716D /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EE1C071823DB077A00D0716D /* DramaListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaListCell.swift; sourceTree = "<group>"; };
+		EE1C071923DB077A00D0716D /* DramaListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DramaListCell.xib; sourceTree = "<group>"; };
+		EE1C071E23DB0BDE00D0716D /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		EE1C071F23DB0BDE00D0716D /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		EE45DDD623E6B6E20074EFEF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		EE5FE54023BCACD8008D8A15 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		EE711BDF23E47ACE00B8E0AD /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		EE94A76323DB1B510030BF5F /* SubCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCommentCell.swift; sourceTree = "<group>"; };
+		EE94A76423DB1B510030BF5F /* SubCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubCommentCell.xib; sourceTree = "<group>"; };
+		EE94A76923DB242C0030BF5F /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		EE94A76A23DB242C0030BF5F /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
+		EEA6A79E23E455470078A010 /* MainTopCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopCell.swift; sourceTree = "<group>"; };
+		EEA6A79F23E455470078A010 /* MainTopCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTopCell.xib; sourceTree = "<group>"; };
+		EEA6A7A423E461640078A010 /* MainTopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTopCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEA6A7A523E461640078A010 /* MainTopCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTopCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEA6A7AA23E4699E0078A010 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
+		EEA6A7AB23E4699E0078A010 /* EpisodeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeTableViewCell.xib; sourceTree = "<group>"; };
+		EEA6A7AE23E46A2F0078A010 /* EpisodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCollectionViewCell.swift; sourceTree = "<group>"; };
+		EEA6A7AF23E46A2F0078A010 /* EpisodeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEA6A7B223E4713E0078A010 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		EEA6A7B323E4713E0078A010 /* PostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		EEB41C1923B30E2200D7C4BD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC2672423B3123B008CA938 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
+		EED0A1A123E865C1004E0D04 /* DruwaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DruwaButton.swift; sourceTree = "<group>"; };
+		EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
+		EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
+		EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewCell.swift; sourceTree = "<group>"; };
+		EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterViewCell.xib; sourceTree = "<group>"; };
+		EED38D3823DD377E00CE0245 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		EED38D3923DD377E00CE0245 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
 		EED68F6623B64634000E4705 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		EED68F6723B64634000E4705 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
 		EED68F6A23B646D1000E4705 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
@@ -118,15 +180,85 @@
 			isa = PBXGroup;
 			children = (
 				EE1B3BF823B260650031A604 /* AppDelegate.swift */,
+				EE711BDC23E47A0E00B8E0AD /* Base */,
 				EEB41C1623B30DC200D7C4BD /* Intro */,
 				EEB41C1823B30DF700D7C4BD /* Main */,
 				EEB41C1723B30DD300D7C4BD /* Login */,
+				EE1C071423DAE46B00D0716D /* Detail */,
+				EE1C071123DAE3B200D0716D /* Extension */,
 				EE1B3BFE23B260650031A604 /* Main.storyboard */,
 				EE1B3C0123B260670031A604 /* Assets.xcassets */,
 				EE1B3C0323B260670031A604 /* LaunchScreen.storyboard */,
 				EE1B3C0623B260670031A604 /* Info.plist */,
 			);
 			path = Druwa;
+			sourceTree = "<group>";
+		};
+		EE1C071123DAE3B200D0716D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */,
+				EE45DDD623E6B6E20074EFEF /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EE1C071423DAE46B00D0716D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C071723DB06FC00D0716D /* Cell */,
+				EE1C071523DAE4BE00D0716D /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		EE1C071723DB06FC00D0716D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */,
+				EE1C071823DB077A00D0716D /* DramaListCell.swift */,
+				EE1C071923DB077A00D0716D /* DramaListCell.xib */,
+				EE1C071E23DB0BDE00D0716D /* CommentCell.swift */,
+				EE1C071F23DB0BDE00D0716D /* CommentCell.xib */,
+				EE94A76323DB1B510030BF5F /* SubCommentCell.swift */,
+				EE94A76423DB1B510030BF5F /* SubCommentCell.xib */,
+				EE94A76923DB242C0030BF5F /* ReviewCell.swift */,
+				EE94A76A23DB242C0030BF5F /* ReviewCell.xib */,
+				EED38D3823DD377E00CE0245 /* PlayerCell.swift */,
+				EED38D3923DD377E00CE0245 /* PlayerCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EE711BDC23E47A0E00B8E0AD /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */,
+				EE711BDF23E47ACE00B8E0AD /* NavigationBar.swift */,
+				EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */,
+				EED0A1A123E865C1004E0D04 /* DruwaButton.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		EEA6A79D23E454F60078A010 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6A79E23E455470078A010 /* MainTopCell.swift */,
+				EEA6A79F23E455470078A010 /* MainTopCell.xib */,
+				EEA6A7A423E461640078A010 /* MainTopCollectionViewCell.swift */,
+				EEA6A7A523E461640078A010 /* MainTopCollectionViewCell.xib */,
+				EEA6A7AA23E4699E0078A010 /* EpisodeTableViewCell.swift */,
+				EEA6A7AB23E4699E0078A010 /* EpisodeTableViewCell.xib */,
+				EEA6A7AE23E46A2F0078A010 /* EpisodeCollectionViewCell.swift */,
+				EEA6A7AF23E46A2F0078A010 /* EpisodeCollectionViewCell.xib */,
+				EEA6A7B223E4713E0078A010 /* PostTableViewCell.swift */,
+				EEA6A7B323E4713E0078A010 /* PostTableViewCell.xib */,
+				EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */,
+				EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */,
+				EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EEB41C1623B30DC200D7C4BD /* Intro */ = {
@@ -150,6 +282,7 @@
 		EEB41C1823B30DF700D7C4BD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EEA6A79D23E454F60078A010 /* Cell */,
 				EEC2672423B3123B008CA938 /* MainViewController.swift */,
 			);
 			path = Main;
@@ -229,11 +362,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE94A76623DB1B510030BF5F /* SubCommentCell.xib in Resources */,
+				EEA6A7A123E455470078A010 /* MainTopCell.xib in Resources */,
+				EEA6A7B123E46A2F0078A010 /* EpisodeCollectionViewCell.xib in Resources */,
 				EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */,
+				EE94A76C23DB242C0030BF5F /* ReviewCell.xib in Resources */,
 				EE1B3C0223B260670031A604 /* Assets.xcassets in Resources */,
+				EEA6A7B523E4713E0078A010 /* PostTableViewCell.xib in Resources */,
+				EED0A1A623E86C7A004E0D04 /* HeaderViewCell.xib in Resources */,
+				EEA6A7A723E461640078A010 /* MainTopCollectionViewCell.xib in Resources */,
 				EE1B3C0023B260650031A604 /* Main.storyboard in Resources */,
+				EE1C071B23DB077A00D0716D /* DramaListCell.xib in Resources */,
 				EED68F6923B64634000E4705 /* TextFieldCell.xib in Resources */,
+				EEA6A7AD23E4699E0078A010 /* EpisodeTableViewCell.xib in Resources */,
 				EED68F6D23B646D1000E4705 /* TitleCell.xib in Resources */,
+				EED0A1AA23E86C8A004E0D04 /* FooterViewCell.xib in Resources */,
+				EED38D3B23DD377E00CE0245 /* PlayerCell.xib in Resources */,
+				EE1C072123DB0BDE00D0716D /* CommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +431,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */,
+				EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */,
+				EE94A76B23DB242C0030BF5F /* ReviewCell.swift in Sources */,
+				EEA6A7B023E46A2F0078A010 /* EpisodeCollectionViewCell.swift in Sources */,
+				EE1C071623DAE4BE00D0716D /* DetailViewController.swift in Sources */,
 				EED68F6F23B64D8C000E4705 /* ProfileVIew.swift in Sources */,
+				EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */,
+				EE711BE023E47ACE00B8E0AD /* NavigationBar.swift in Sources */,
+				EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */,
+				EEA6A7A623E461640078A010 /* MainTopCollectionViewCell.swift in Sources */,
 				EEB41C1A23B30E2200D7C4BD /* IntroViewController.swift in Sources */,
 				EED68F6C23B646D1000E4705 /* TitleCell.swift in Sources */,
 				EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */,
+				EED38D3A23DD377E00CE0245 /* PlayerCell.swift in Sources */,
+				EEA6A7A023E455470078A010 /* MainTopCell.swift in Sources */,
 				EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */,
+				EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */,
+				EEA6A7AC23E4699E0078A010 /* EpisodeTableViewCell.swift in Sources */,
+				EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */,
+				EEA6A7B423E4713E0078A010 /* PostTableViewCell.swift in Sources */,
+				EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */,
 				EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */,
+				EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */,
+				EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */,
+				EE94A76523DB1B510030BF5F /* SubCommentCell.swift in Sources */,
 				EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */,
 				EED68F6823B64634000E4705 /* TextFieldCell.swift in Sources */,
 				EE5FE54123BCACD8008D8A15 /* ButtonView.swift in Sources */,
