@@ -12,6 +12,7 @@ class MainTopCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = .gray400
@@ -29,4 +30,8 @@ class MainTopCell: UITableViewCell {
         super.prepareForReuse()
     }
     
+    func changeCurrentPage(_ index: Int) {
+        pageControl.currentPage = index
+    }
 }
+

@@ -13,6 +13,7 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var mainTopCell: MainTopCell?
     var horizenFlowlayout: UICollectionViewFlowLayout = {
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumInteritemSpacing = 0.0
@@ -139,11 +140,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: MainTopCell.self), for: indexPath) as? MainTopCell else {
                 return UITableViewCell()
             }
+            mainTopCell = cell
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             cell.collectionView.register(UINib(nibName: String(describing: MainTopCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MainTopCollectionViewCell.self))
             cell.collectionView.tag = cell.collectionView.hashValue
             cell.collectionView.collectionViewLayout = horizenFlowlayout
+            cell.collectionView.isPagingEnabled = true
+            cell.collectionView.bounces = false
             tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
             
             return cell
@@ -334,6 +338,11 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         default:
             break
         }
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        mainTopCell!.changeCurrentPage(page)
     }
     
 }
