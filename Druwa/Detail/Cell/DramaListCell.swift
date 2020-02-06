@@ -10,6 +10,9 @@ import UIKit
 
 class DramaListCell: UICollectionViewCell {
 
+    @IBOutlet weak var dramaImageView: UIImageView!
+    @IBOutlet weak var eposideName: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

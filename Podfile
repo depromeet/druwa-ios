@@ -13,5 +13,8 @@ target 'Druwa' do
     pod 'Kingfisher'
     
     pod "youtube-ios-player-helper"
+
+    pod 'Toast-Swift'
+    pod 'IQKeyboardManagerSwift'
     
 end

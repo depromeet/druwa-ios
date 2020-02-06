@@ -10,6 +10,14 @@ import UIKit
 
 class SubCommentCell: UITableViewCell {
 
+    @IBOutlet weak var profileView: UIImageView!
+    @IBOutlet weak var nickName: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var personNickName: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var upButton: UIButton!
+    @IBOutlet weak var downButton: UIButton!
+    @IBOutlet weak var commentButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
