@@ -34,7 +34,7 @@ class MainViewController: BaseViewController {
         return flowLayout
     }()
     
-    var tagDictionary: [Int: Int] =  [Int: Int]()
+    private var tagDictionary: [Int: Int] =  [Int: Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -91,35 +91,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
     }
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header: HeaderLabel = HeaderLabel()
-//        header.backgroundColor = .clear
-//        header.font = .boldSystemFont(ofSize: 16.0)
-//        header.textColor = .gray0
-//        switch section {
-//        case 1:
-//            let attributeString = NSMutableAttributedString(string: "1월 인기 BEST 드라마")
-//            attributeString.setColorForText("BEST", with: .main400)
-//            header.attributedText = attributeString
-//            break
-//        case 2:
-//            let attributeString = NSMutableAttributedString(string: "리뷰 TOP 화제의 인기작")
-//            attributeString.setColorForText("인기작", with: .main400)
-//            header.attributedText = attributeString
-//            break
-//        case 3:
-//            header.text = "최신 업데이트"
-//            break
-//        case 4:
-//            header.text = "스릴러 인기 드라마"
-//            break
-//        default:
-//            break
-//        }
-//        return header
-//    }
-    
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
@@ -169,11 +141,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.delegate = self
-                cell.collectionView.dataSource = self
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
+                cell.selectionStyle = .none
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             case 2:
@@ -213,11 +184,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.delegate = self
-                cell.collectionView.dataSource = self
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
+                cell.selectionStyle = .none
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             case 2:
@@ -245,11 +215,10 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                    return UITableViewCell()
                }
-               cell.collectionView.delegate = self
-               cell.collectionView.dataSource = self
                cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                cell.collectionView.tag = cell.collectionView.hashValue
                cell.collectionView.collectionViewLayout = verticalFlowlayout
+               cell.selectionStyle = .none
                tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                return cell
            case 2:
@@ -266,7 +235,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        switch section {
+        case 1,3,4:
+            if let cell = cell as? EpisodeTableViewCell {
+                cell.collectionView.dataSource = self
+                cell.collectionView.delegate = self
+                tagDictionary.updateValue(indexPath.section, forKey: cell.collectionView.tag)
+                cell.collectionView.reloadData()
+            }
+        default:
+            break
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {

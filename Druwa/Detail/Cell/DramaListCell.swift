@@ -15,7 +15,16 @@ class DramaListCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        eposideName.font = .systemFont(ofSize: 14.0)
+        eposideName.textColor = .gray0
+        titleLabel.font = .systemFont(ofSize: 14.0)
+        titleLabel.textColor = .gray0
     }
-
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        dramaImageView.image = nil
+        eposideName.text = nil
+        titleLabel.text = nil
+    }
 }

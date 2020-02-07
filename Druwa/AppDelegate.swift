@@ -16,11 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isSignUp: Bool = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        IQKeyboardManager.shared.enable = true
-        KOSession.shared()?.logoutAndClose { [weak self] (success, error) -> Void in
+//        IQKeyboardManager.shared.enable = true
+//        KOSession.shared()?.logoutAndClose { [weak self] (success, error) -> Void in
         //                  _ = self?.navigationController?.popViewController(animated: true)
-        }
-        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification), name: NSNotification.Name.KOSessionDidChange, object: nil)
+//        }
+//        NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.kakaoSessionDidChangeWithNotification), name: NSNotification.Name.KOSessionDidChange, object: nil)
 //        KOSession.shared()?.logoutAndClose { [weak self] (success, error) -> Void in
 ////                  _ = self?.navigationController?.popViewController(animated: true)
 //        }

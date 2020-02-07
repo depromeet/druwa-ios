@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D2670223ED3FA500BE1941 /* TabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2670023ED3FA500BE1941 /* TabButtonCell.swift */; };
+		25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D2670123ED3FA500BE1941 /* TabButtonCell.xib */; };
 		751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */; };
 		EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B3BF823B260650031A604 /* AppDelegate.swift */; };
 		EE1B3C0023B260650031A604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3BFE23B260650031A604 /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		25D2670023ED3FA500BE1941 /* TabButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCell.swift; sourceTree = "<group>"; };
+		25D2670123ED3FA500BE1941 /* TabButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabButtonCell.xib; sourceTree = "<group>"; };
 		3E82280B10B85EFF7E1D4C09 /* Pods-Druwa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.release.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.release.xcconfig"; sourceTree = "<group>"; };
 		710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druwa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB148A0070ED529D5F9D7028 /* Pods-Druwa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.debug.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 				EE94A76A23DB242C0030BF5F /* ReviewCell.xib */,
 				EED38D3823DD377E00CE0245 /* PlayerCell.swift */,
 				EED38D3923DD377E00CE0245 /* PlayerCell.xib */,
+				25D2670023ED3FA500BE1941 /* TabButtonCell.swift */,
+				25D2670123ED3FA500BE1941 /* TabButtonCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				EE94A76623DB1B510030BF5F /* SubCommentCell.xib in Resources */,
 				EEA6A7A123E455470078A010 /* MainTopCell.xib in Resources */,
 				EEA6A7B123E46A2F0078A010 /* EpisodeCollectionViewCell.xib in Resources */,
+				25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */,
 				EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */,
 				EE94A76C23DB242C0030BF5F /* ReviewCell.xib in Resources */,
 				EE1B3C0223B260670031A604 /* Assets.xcassets in Resources */,
@@ -440,6 +447,7 @@
 				EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */,
 				EE711BE023E47ACE00B8E0AD /* NavigationBar.swift in Sources */,
 				EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */,
+				25D2670223ED3FA500BE1941 /* TabButtonCell.swift in Sources */,
 				EEA6A7A623E461640078A010 /* MainTopCollectionViewCell.swift in Sources */,
 				EEB41C1A23B30E2200D7C4BD /* IntroViewController.swift in Sources */,
 				EED68F6C23B646D1000E4705 /* TitleCell.swift in Sources */,
