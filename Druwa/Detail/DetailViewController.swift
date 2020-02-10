@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import youtube_ios_player_helper_swift
+
 
 class DetailViewController: BaseViewController {
 
+    private var playerView: PlayerView!
+    
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var youtubePalyer: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -29,9 +33,20 @@ class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+//        youtubePalyer.load(videoId: "ie8JQLLisao")
+        playerView = UINib(nibName: "PlayerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PlayerView
+        playerView.videoId = "ie8JQLLisao"
+        addPlayerView()
+//        youtubePalyer.load(withVideoId: "4BCxqrhsjOw")
+//        youtubePalyer.load(withVideoId: <#T##String#>)
     }
+    
+    private func addPlayerView(){
+        youtubePalyer.addSubview(playerView)
+        playerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: youtubePalyer.frame.height)
+        playerView.autoresizingMask = .flexibleWidth
+    }
+    
     override func setUpUI() {
         super.setUpUI()
         tableView.backgroundColor = .gray400
@@ -86,8 +101,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
-                cell.collectionView.collectionViewLayout = horizenFlowlayout
-                cell.selectionStyle = .none
+
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             default:
@@ -106,8 +120,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
-                cell.collectionView.collectionViewLayout = horizenFlowlayout
-                cell.selectionStyle = .none
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             default:
@@ -144,7 +156,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = cell as? EpisodeTableViewCell {
                 cell.collectionView.dataSource = self
                 cell.collectionView.delegate = self
+                cell.collectionView.collectionViewLayout = horizenFlowlayout
                 tagDictionary.updateValue(indexPath.section, forKey: cell.collectionView.tag)
+                cell.selectionStyle = .none
                 cell.collectionView.reloadData()
             }
         default:

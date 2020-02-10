@@ -103,14 +103,14 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DyM-8R-CJQ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="221"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="DyM-8R-CJQ" secondAttribute="height" multiplier="15:8" id="ARU-O7-dF9"/>
+                                    <constraint firstAttribute="width" secondItem="DyM-8R-CJQ" secondAttribute="height" multiplier="16:9" id="ARU-O7-dF9"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SjM-eQ-YC5">
-                                <rect key="frame" x="0.0" y="309" width="414" height="505"/>
+                                <rect key="frame" x="0.0" y="321" width="414" height="493"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="EEp-KN-pig" id="bXw-Py-hTd"/>
@@ -161,7 +161,7 @@
                         <outlet property="navigationBar" destination="6LD-6d-QzS" id="hK0-Qw-Snm"/>
                         <outlet property="tableView" destination="SjM-eQ-YC5" id="uah-XN-E1d"/>
                         <outlet property="textField" destination="lsV-YC-GCL" id="kHs-h8-HM6"/>
-                        <outlet property="youtubePalyer" destination="DyM-8R-CJQ" id="xQB-yw-pNw"/>
+                        <outlet property="youtubePalyer" destination="DyM-8R-CJQ" id="q4C-Iz-4dD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xl2-Mw-lxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

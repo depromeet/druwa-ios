@@ -52,9 +52,9 @@
                                 <color key="textColor" red="0.97254901959999995" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="최고의 선물 - 인연과 악연 사이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jth-WH-Shg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="최고의 선물 - 인연과 악연 사이" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jth-WH-Shg">
                                 <rect key="frame" x="16" y="39" width="305" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" red="0.97254901959999995" green="0.94509803920000002" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -66,7 +66,7 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gze-ha-5UV">
                                 <rect key="frame" x="0.0" y="182" width="337" height="1"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.12941176470588234" green="0.13333333333333333" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="TZO-gt-cIQ"/>
                                 </constraints>
@@ -87,13 +87,12 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzX-IE-pAa">
                                 <rect key="frame" x="0.0" y="227" width="337" height="1"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.12941176469999999" green="0.1333333333" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="rQT-Cp-dqD"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.12941176469999999" green="0.1333333333" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="xzX-IE-pAa" firstAttribute="centerX" secondItem="gze-ha-5UV" secondAttribute="centerX" id="2MY-fC-dY7"/>
                             <constraint firstItem="xzX-IE-pAa" firstAttribute="leading" secondItem="kmY-tH-gfA" secondAttribute="leading" id="6Ex-3U-QpR"/>
@@ -144,7 +143,7 @@
                 <outlet property="downButton" destination="1Fz-jV-OfM" id="YPr-A8-LH5"/>
                 <outlet property="episodeLabel" destination="pBL-3J-boE" id="a6A-L5-M86"/>
                 <outlet property="genreLabel" destination="Psg-ah-Q8j" id="k5F-qk-anU"/>
-                <outlet property="productLabel" destination="kmY-tH-gfA" id="XKJ-jM-sEM"/>
+                <outlet property="productLabel" destination="Fcm-hb-LWb" id="rgx-G0-HbW"/>
                 <outlet property="shareButton" destination="dUD-Vf-OXc" id="MRe-hX-I7g"/>
                 <outlet property="summaryLabel" destination="wPg-q3-YG3" id="lxQ-Z1-jsA"/>
                 <outlet property="timeLabel" destination="F9Q-Ic-Rv7" id="cUu-X3-axL"/>

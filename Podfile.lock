@@ -13,7 +13,7 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftyBeaver (1.8.3)
   - Toast-Swift (5.0.1)
-  - youtube-ios-player-helper (0.1.6)
+  - youtube-ios-player-helper-swift (1.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyBeaver
   - Toast-Swift
-  - youtube-ios-player-helper
+  - youtube-ios-player-helper-swift
 
 SPEC REPOS:
   trunk:
@@ -35,7 +35,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftyBeaver
     - Toast-Swift
-    - youtube-ios-player-helper
+    - youtube-ios-player-helper-swift
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
@@ -46,8 +46,8 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyBeaver: 3d3e93a12d648bd400b6f2948a7ef128b5b183c7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
+  youtube-ios-player-helper-swift: 51a3c5325317c8271d0c7985c1bbe5a252ffb2fd
 
-PODFILE CHECKSUM: 6512b8e46d4a80357a27a3b4b7befe057d500381
+PODFILE CHECKSUM: a58ba9dad526ec94958898b7fc3bb264879fdfcb
 
 COCOAPODS: 1.8.4

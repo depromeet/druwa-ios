@@ -12,7 +12,7 @@ target 'Druwa' do
     pod 'SnapKit'
     pod 'Kingfisher'
     
-    pod "youtube-ios-player-helper"
+    pod "youtube-ios-player-helper-swift"
 
     pod 'Toast-Swift'
     pod 'IQKeyboardManagerSwift'
