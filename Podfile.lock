@@ -13,6 +13,7 @@ PODS:
   - SnapKit (5.0.1)
   - SwiftyBeaver (1.8.3)
   - Toast-Swift (5.0.1)
+  - TTADataPickerView (0.4.0)
   - youtube-ios-player-helper-swift (1.1)
 
 DEPENDENCIES:
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftyBeaver
   - Toast-Swift
+  - TTADataPickerView
   - youtube-ios-player-helper-swift
 
 SPEC REPOS:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftyBeaver
     - Toast-Swift
+    - TTADataPickerView
     - youtube-ios-player-helper-swift
 
 SPEC CHECKSUMS:
@@ -46,8 +49,9 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftyBeaver: 3d3e93a12d648bd400b6f2948a7ef128b5b183c7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+  TTADataPickerView: 0c212799f5459e1a00392643f203cf3a18cddb6a
   youtube-ios-player-helper-swift: 51a3c5325317c8271d0c7985c1bbe5a252ffb2fd
 
-PODFILE CHECKSUM: a58ba9dad526ec94958898b7fc3bb264879fdfcb
+PODFILE CHECKSUM: 78cdeeb919fd6763684a90ef8839c67cfc9a3d00
 
 COCOAPODS: 1.8.4

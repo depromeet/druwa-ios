@@ -33,12 +33,9 @@ class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        youtubePalyer.load(videoId: "ie8JQLLisao")
         playerView = UINib(nibName: "PlayerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PlayerView
         playerView.videoId = "ie8JQLLisao"
         addPlayerView()
-//        youtubePalyer.load(withVideoId: "4BCxqrhsjOw")
-//        youtubePalyer.load(withVideoId: <#T##String#>)
     }
     
     private func addPlayerView(){
@@ -62,7 +59,19 @@ class DetailViewController: BaseViewController {
         
         navigationBar.configurationLeftButton(image: "iconBack", target: self)
         navigationBar.configurationRightButton(image: "iconBookmark", target: self)
-        navigationBar.configurationTitle(title: "EP.2", size: 17.0, color: .gray0)
+        navigationBar.configurationTitleButton(title: "EP.2", size: 17.0, color: .gray0, image: "iconDropdownDown", target: self)
+    }
+    
+    @objc func pressedLeftButton(sender: UIButton) {
+          print("click")
+    }
+      
+    @objc func pressedRightButton(sender: UIButton) {
+        print("click2")
+    }
+    
+    @objc func pressedTitleButton(sender: UIButton) {
+        print("click3")
     }
 
 }

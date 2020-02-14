@@ -16,5 +16,6 @@ target 'Druwa' do
 
     pod 'Toast-Swift'
     pod 'IQKeyboardManagerSwift'
+    pod 'TTADataPickerView'
     
 end

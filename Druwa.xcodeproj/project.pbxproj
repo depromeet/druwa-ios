@@ -406,7 +406,6 @@
 			);
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Druwa/Pods-Druwa-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-				"${BUILT_PRODUCTS_DIR}/youtube-ios-player-helper-swift/youtube_ios_player_helper_swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
