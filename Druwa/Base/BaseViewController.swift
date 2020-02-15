@@ -17,6 +17,7 @@ class BaseViewController: UIViewController {
     
     func setUpUI() {
         view.backgroundColor = .gray400
+        navigationController?.navigationBar.isHidden = true
     }
 
     /*

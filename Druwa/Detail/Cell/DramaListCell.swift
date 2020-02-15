@@ -19,6 +19,7 @@ class DramaListCell: UICollectionViewCell {
         eposideName.textColor = .gray0
         titleLabel.font = .systemFont(ofSize: 14.0)
         titleLabel.textColor = .gray0
+        contentView.backgroundColor = .gray500
     }
     
     override func prepareForReuse() {

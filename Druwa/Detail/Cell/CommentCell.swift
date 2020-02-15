@@ -22,6 +22,7 @@ class CommentCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        profileImageView.layer.cornerRadius = 20.0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -48,5 +49,16 @@ class CommentCell: UITableViewCell {
         downButton.setImage(UIImage(named: "likeUncontourDefault"), for: .selected)
         downButton.setTitle("321", for: .normal)
         downButton.setTitle("321", for: .selected)
+    }
+    
+    func configurationData(imageString: String, nick: String, time: Int, comment: String, up: String, down: String) {
+        profileImageView.kf.setImage(with: URL(string: imageString)!)
+        nickName.text = nick
+        timeLabel.text = "\(time)"
+        commentLabel.text = comment
+        upButton.setTitle(up, for: .normal)
+        upButton.setTitle(up, for: .selected)
+        downButton.setTitle(down, for: .normal)
+        downButton.setTitle(down, for: .selected)
     }
 }

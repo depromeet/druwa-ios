@@ -10,15 +10,18 @@ import UIKit
 
 class TabButtonCell: UITableViewCell {
 
+    @IBOutlet weak var commentButtton: TapButton!
+    @IBOutlet weak var reviewButton: TapButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        commentButtton.setTitleColor(.gray0, for: .normal)
+        reviewButton.setTitleColor(.gray0, for: .normal)
+        commentButtton.titleLabel?.font = .boldSystemFont(ofSize: 14.0)
+        reviewButton.titleLabel?.font = .boldSystemFont(ofSize: 14.0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

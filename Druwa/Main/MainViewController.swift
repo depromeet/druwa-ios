@@ -79,7 +79,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             return 320
         case (1,2):
             return 48
-        case (2,_):
+        case (2,0):
+            return 43
+        case (2,1):
             return 183
         case (3...4,0):
             return 43
@@ -98,10 +100,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
+        case 0:
+            return 1
         case 1,3,4:
             return 3
+        case 2:
+            return 2
         default:
-            return 1
+            return 0
         }
     }
     
@@ -136,6 +142,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 let attributeString = NSMutableAttributedString(string: "1월 인기 BEST 드라마")
                 attributeString.setColorForText("BEST", with: .main400)
                 cell.titleLabel.attributedText = attributeString
+                cell.selectionStyle = .none
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
@@ -151,22 +158,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                     return UITableViewCell()
                 }
-                cell.footerButton.setTitle("", for: .normal)
+                cell.footerButton.setTitle("1월 인기 베스트 드라마 전체보기", for: .normal)
+                cell.selectionStyle = .none
                 return cell
             default:
                 return UITableViewCell()
             }
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.postImageView.kf.setImage(with: URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-            cell.productionName.text = "모두의필름"
-            cell.likeCount.text = "123"
-            cell.summaryLabel.text = "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은"
-            cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
-            return cell
-        case 3:
             switch indexPath.row {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
@@ -177,8 +175,38 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                 cell.titleLabel.textColor = .gray0
                 let attributeString = NSMutableAttributedString(string: "리뷰 TOP 화제의 인기작")
-                attributeString.setColorForText("BEST", with: .main400)
+                attributeString.setColorForText("인기작", with: .main400)
                 cell.titleLabel.attributedText = attributeString
+                cell.selectionStyle = .none
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.postImageView.kf.setImage(with: URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
+                cell.productionName.text = "모두의필름"
+                cell.DramaName.text = "고래먼지"
+                cell.likeCount.text = "123"
+                cell.summaryLabel.text = "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은"
+                cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
+                cell.dramaButton.setTitle("드라마 보러가기", for: .normal)
+                cell.selectionStyle = .none
+                return cell
+            default:
+                  return UITableViewCell()
+              }
+        case 3:
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
+                    return UITableViewCell()
+                }
+                cell.titleLabel.text = "1"
+                cell.titleLabel.backgroundColor = .clear
+                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
+                cell.titleLabel.textColor = .gray0
+                cell.titleLabel.text = "최신 업데이트"
+                cell.selectionStyle = .none
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
@@ -194,7 +222,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                    return UITableViewCell()
                 }
-                cell.footerButton.setTitle("", for: .normal)
+                cell.configurationButtonTitle(title: "최신 업데이트 전체보기")
                 return cell
             default:
                 return UITableViewCell()
@@ -209,7 +237,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                cell.titleLabel.backgroundColor = .clear
                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                cell.titleLabel.textColor = .gray0
-               cell.titleLabel.text = ""
+               cell.titleLabel.text = "스릴러 인기 드라마"
                return cell
            case 1:
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
@@ -225,7 +253,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                   return UITableViewCell()
                }
-               cell.footerButton.setTitle("스릴러 인기 드라마", for: .normal)
+               cell.configurationButtonTitle(title: "스릴러 장르 전체보기")
                return cell
            default:
                return UITableViewCell()
@@ -252,6 +280,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = tagDictionary[collectionView.tag]
         switch section {
@@ -308,6 +337,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = tagDictionary[collectionView.tag]
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController")
+        navigationController?.pushViewController(detailViewController, animated: true)
         switch section {
         case 0:
             break
@@ -325,6 +357,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
         mainTopCell!.changeCurrentPage(page)
+
     }
     
 }

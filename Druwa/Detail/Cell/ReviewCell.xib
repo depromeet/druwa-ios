@@ -49,16 +49,16 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-62-nTD">
-                                        <rect key="frame" x="40" y="1" width="193.5" height="34"/>
+                                        <rect key="frame" x="40" y="1" width="163.5" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Sa-AO-Tn6">
-                                                <rect key="frame" x="0.0" y="0.0" width="193.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="163.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkF-kj-olt">
-                                                <rect key="frame" x="0.0" y="17" width="193.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="17" width="163.5" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" red="0.23137254900000001" green="0.24313725489999999" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -66,11 +66,10 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6I7-4X-joH">
-                                        <rect key="frame" x="245.5" y="2" width="50" height="32"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="215.5" y="10" width="80" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="Chu-xu-GGU"/>
-                                            <constraint firstAttribute="height" constant="32" id="f1U-dy-3gK"/>
+                                            <constraint firstAttribute="width" constant="80" id="Chu-xu-GGU"/>
+                                            <constraint firstAttribute="height" constant="16" id="f1U-dy-3gK"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CE0-EY-pDG">
@@ -133,9 +132,10 @@
                 <outlet property="contentLabel" destination="wTV-2r-3lF" id="Us2-4E-uuD"/>
                 <outlet property="dateLabel" destination="fkF-kj-olt" id="MNY-p7-Loy"/>
                 <outlet property="moreButton" destination="mYa-NA-GvN" id="Y4l-Nl-obd"/>
-                <outlet property="nickName" destination="m7h-62-nTD" id="T3A-nt-g6Z"/>
+                <outlet property="nickName" destination="2Sa-AO-Tn6" id="NWc-sk-Otx"/>
                 <outlet property="pointLabel" destination="3Um-Ol-8HQ" id="CPb-xo-gVr"/>
-                <outlet property="profileView" destination="kWT-xN-9Uf" id="UqC-Uu-NAm"/>
+                <outlet property="profileView" destination="ZrN-6Q-sW1" id="mOq-bw-Fke"/>
+                <outlet property="ratingBackgroundView" destination="6I7-4X-joH" id="4OJ-ak-M0v"/>
                 <outlet property="ratingView" destination="6I7-4X-joH" id="F7E-cV-YSl"/>
                 <outlet property="titleLabel" destination="Gbs-cg-mkg" id="OEO-8s-Zqi"/>
             </connections>

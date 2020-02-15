@@ -99,8 +99,8 @@ class NavigationBar: UIView {
         titleButton.titleLabel?.font = .systemFont(ofSize: size)
         titleButton.setTitleColor(color, for: .normal)
         titleButton.setTitleColor(color, for: .selected)
-        rightButton.setImage(UIImage(named: image) , for: .normal)
-        rightButton.setImage(UIImage(named: image) , for: .selected)
+        titleButton.setImage(UIImage(named: image) , for: .normal)
+        titleButton.setImage(UIImage(named: image) , for: .selected)
         titleButton.addTarget(target, action: #selector(pressedTitleButton), for: .touchUpInside)
         titleButton.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()

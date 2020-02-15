@@ -10,14 +10,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="185" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="Druwa" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostTableViewCell" rowHeight="185" id="KGk-i7-Jjw" customClass="PostTableViewCell" customModule="D_studio" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="464" height="185"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="464" height="185"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-5i-ZSp">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uEc-5i-ZSp">
                         <rect key="frame" x="16" y="0.0" width="132" height="188"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="132" id="RH6-L7-uAS"/>
@@ -51,7 +51,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-Zo-IH6">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-Zo-IH6" customClass="DruwaButton" customModule="D_studio" customModuleProvider="target">
                         <rect key="frame" x="164" y="106.5" width="89" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="드라마 보러가기"/>
@@ -82,7 +82,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="DramaName" destination="Bj2-pc-TWm" id="uzB-dl-ga4"/>
-                <outlet property="dramaButton" destination="hwy-Zo-IH6" id="yAq-d3-ku6"/>
+                <outlet property="dramaButton" destination="hwy-Zo-IH6" id="TPE-qt-bMA"/>
                 <outlet property="likeCount" destination="SIg-yo-lAf" id="4M6-ss-beZ"/>
                 <outlet property="postImageView" destination="uEc-5i-ZSp" id="WMA-F9-wSm"/>
                 <outlet property="productionName" destination="kO6-xv-MJH" id="hbA-vU-h9k"/>

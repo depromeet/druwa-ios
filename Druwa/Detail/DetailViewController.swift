@@ -8,11 +8,14 @@
 
 import UIKit
 import youtube_ios_player_helper_swift
+import TTADataPickerView
 
 
 class DetailViewController: BaseViewController {
 
     private var playerView: PlayerView!
+    private var isComment: Bool = true
+    @IBOutlet weak var bottomHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var youtubePalyer: UIView!
@@ -63,7 +66,7 @@ class DetailViewController: BaseViewController {
     }
     
     @objc func pressedLeftButton(sender: UIButton) {
-          print("click")
+        navigationController?.popViewController(animated: true)
     }
       
     @objc func pressedRightButton(sender: UIButton) {
@@ -72,10 +75,44 @@ class DetailViewController: BaseViewController {
     
     @objc func pressedTitleButton(sender: UIButton) {
         print("click3")
+        let apperance = TTADataPickerView.appearance()
+        apperance.setConfirmButtonAttributes(att: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        apperance.setCancelButtonAttributes(att: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+        apperance.setToolBarTintColor(color: .lightGray)
+        apperance.setToolBarBarTintColor(color: UIColor(white: 0.9, alpha: 0.5))
+        apperance.setTitleFont(font: UIFont.systemFont(ofSize: 14))
+        apperance.setTitleColor(color: UIColor(red: 0.0, green: 0.5, blue: 1.0, alpha: 1.0))
+        
+        let pickerView = TTADataPickerView(title: nil, type: .text, delegate: self)
+        pickerView.textItemsForComponent = [["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"], ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"], ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]]
+        
+        pickerView.show()
+//        let pickerView = TTADataPickerView(title: "TTADataPickerView", type: .text)
+//        pickerView.textItemsForComponent = [["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]]
+        
     }
 
+    @objc func pressedCommentButtton(sender: UIButton) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+            self?.bottomHeightConstraint.constant = 48.0
+            self?.isComment = true
+            
+        }
+    }
+    
+    @objc func pressedReviewButton(sender: UIButton) {
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+            self?.bottomHeightConstraint.constant = 80.0
+            self?.isComment = false
+        }
+    }
 }
 
+extension DetailViewController: TTADataPickerViewDelegate {
+    
+}
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -83,10 +120,22 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 4 {
+        switch section {
+        case 0, 3:
+            return 1
+        case 1:
             return 2
+        case 2:
+            return 2
+        case 4:
+            if isComment {
+                return 2
+            } else {
+                return 1
+            }
+        default:
+            return 0
         }
-        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -103,12 +152,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
+                cell.titleLabel.text = "다른 회차 둘러보기"
+                cell.titleLabel.textColor = .gray0
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
+                cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: DramaListCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
 
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
@@ -122,12 +174,15 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
+                cell.titleLabel.text = "연관 드라마"
+                cell.titleLabel.textColor = .gray0
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
+                cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: DramaListCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
@@ -138,18 +193,37 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TabButtonCell.self), for: indexPath) as? TabButtonCell else {
                 return UITableViewCell()
             }
-             
+            cell.commentButtton.setTitle("Comments", for: .normal)
+            cell.commentButtton.setTitle("Comments", for: .selected)
+            cell.commentButtton.isSelected = isComment
+            cell.commentButtton.addTarget(target, action: #selector(pressedCommentButtton), for: .touchUpInside)
+            
+            cell.reviewButton.setTitle("Review", for: .normal)
+            cell.reviewButton.setTitle("Review", for: .selected)
+            cell.reviewButton.isSelected = !isComment
+            cell.reviewButton.addTarget(target, action: #selector(pressedReviewButton), for: .touchUpInside)
             return cell
          case 4:
-            if indexPath.row == 0 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CommentCell.self), for: indexPath) as? CommentCell else {
+            if isComment {
+                if indexPath.row == 0 {
+                    guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CommentCell.self), for: indexPath) as? CommentCell else {
+                        return UITableViewCell()
+                    }
+                    cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", nick: "person", time: 57, comment: "서강준 갑자기 노래부르고 쓰러질때 뿜었다진짜", up: "1.67K", down: "321")
+                    return cell
+                 } else if indexPath.row == 1 {
+                     guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubCommentCell.self), for: indexPath) as? SubCommentCell else {
+                         return UITableViewCell()
+                     }
+                    cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", nick: "person", personNick: "person", time: 40, comment: "서강준 참 잘생겼죠. 내남자 너무 이뻐하지 말아주기...", up: "1.67K", down: "321")
+                     return cell
+                 }
+            } else {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReviewCell.self), for: indexPath) as? ReviewCell else {
                     return UITableViewCell()
                 }
-                return cell
-            } else if indexPath.row == 1 {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubCommentCell.self), for: indexPath) as? SubCommentCell else {
-                    return UITableViewCell()
-                }
+                cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", title: "서강준 미친 외모에 한번 놀라고, 스토리에 한번 놀라고", content: "서강준 하드캐리 원맨쇼를 원한다면 강추!", nick: "person", time: 47, rating: 4.0)
+            
                 return cell
             }
          default:
@@ -172,6 +246,32 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             }
         default:
             break
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let index = (indexPath.section, indexPath.row)
+        switch index {
+        case (0,_):
+            return 244
+        case (1,0):
+            return 52
+        case (1,1):
+            return 134
+        case (2,0):
+            return 52
+        case (2,1):
+            return 134
+        case (3, _):
+            return 48
+        case (4, _):
+            if isComment {
+                return UITableView.automaticDimension
+            } else {
+               return 127
+            }
+        default:
+            return 0
         }
     }
 }
@@ -232,13 +332,6 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension DetailViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let section = tagDictionary[collectionView.tag]
-        switch section {
-            case 0:
-            return CGSize(width: view.frame.width, height: 272)
-        default:
-            let width = view.frame.width - (16 * 3)
-            return CGSize(width: width / 2, height: 152)
-        }
+        return CGSize(width: 154.0, height: 136.0)
     }
 }

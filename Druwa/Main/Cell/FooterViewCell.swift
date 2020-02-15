@@ -10,10 +10,13 @@ import UIKit
 
 class FooterViewCell: UITableViewCell {
 
-    @IBOutlet weak var footerButton: DruwaButton!
+    @IBOutlet weak var footerButton: FooterButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = .gray400
+        footerButton.setTitleColor(UIColor(red: 80.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0), for: .selected)
+        footerButton.setTitleColor(UIColor(red: 80.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0), for: .normal)
+//        FooterButton.titleColor(<#T##self: UIButton##UIButton#>)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,7 +27,12 @@ class FooterViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        footerButton.titleLabel?.text = ""
+    }
+    
+    func configurationButtonTitle(title: String) {
+        footerButton.setTitle(title, for: .normal)
+        footerButton.setTitle(title, for: .selected)
+        footerButton.setTitle(title, for: .disabled)
     }
     
 }
