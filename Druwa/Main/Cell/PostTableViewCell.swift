@@ -7,9 +7,9 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostTableViewCell: UITableViewCell {
-
     @IBOutlet weak var postImageView: UIImageView!
     @IBOutlet weak var productionName: UILabel!
     @IBOutlet weak var DramaName: UILabel!
@@ -37,4 +37,15 @@ class PostTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    func configurationInit(imageURL: String, productName: String, dramaName: String, like: String, summary: String, buttonName: String) {
+        postImageView.kf.setImage(with: URL(string: imageURL)!)
+        productionName.text = productName
+        DramaName.text = dramaName
+        likeCount.text = like
+        summaryLabel.text = summary
+        dramaButton.setTitle(buttonName, for: .selected)
+        dramaButton.setTitle(buttonName, for: .normal)
+        dramaButton.setTitle(buttonName, for: .disabled)
+        dramaButton.layer.cornerRadius = 4.0
+    }
 }

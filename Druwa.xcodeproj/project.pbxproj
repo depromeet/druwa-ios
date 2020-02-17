@@ -16,8 +16,6 @@
 		EE1B3C0023B260650031A604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3BFE23B260650031A604 /* Main.storyboard */; };
 		EE1B3C0223B260670031A604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0123B260670031A604 /* Assets.xcassets */; };
 		EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0323B260670031A604 /* LaunchScreen.storyboard */; };
-		EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; };
-		EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */; };
 		EE1C071623DAE4BE00D0716D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071523DAE4BE00D0716D /* DetailViewController.swift */; };
 		EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071823DB077A00D0716D /* DramaListCell.swift */; };
@@ -50,7 +48,7 @@
 		EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */; };
 		EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC2672423B3123B008CA938 /* MainViewController.swift */; };
 		EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */; };
-		EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* DruwaButton.swift */; };
+		EED0A1A223E865C1004E0D04 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* Buttons.swift */; };
 		EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */; };
 		EED0A1A623E86C7A004E0D04 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */; };
 		EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */; };
@@ -63,20 +61,6 @@
 		EED68F6D23B646D1000E4705 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED68F6B23B646D1000E4705 /* TitleCell.xib */; };
 		EED68F6F23B64D8C000E4705 /* ProfileVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED68F6E23B64D8C000E4705 /* ProfileVIew.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		EE1B3C1223B26AFE0031A604 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25D2670023ED3FA500BE1941 /* TabButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCell.swift; sourceTree = "<group>"; };
@@ -126,7 +110,7 @@
 		EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC2672423B3123B008CA938 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
-		EED0A1A123E865C1004E0D04 /* DruwaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DruwaButton.swift; sourceTree = "<group>"; };
+		EED0A1A123E865C1004E0D04 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
 		EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewCell.swift; sourceTree = "<group>"; };
@@ -146,7 +130,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */,
-				EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +214,6 @@
 		EE1C071723DB06FC00D0716D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */,
 				EE1C071823DB077A00D0716D /* DramaListCell.swift */,
 				EE1C071923DB077A00D0716D /* DramaListCell.xib */,
 				EE1C071E23DB0BDE00D0716D /* CommentCell.swift */,
@@ -265,7 +247,7 @@
 				EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */,
 				EE711BDF23E47ACE00B8E0AD /* NavigationBar.swift */,
 				EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */,
-				EED0A1A123E865C1004E0D04 /* DruwaButton.swift */,
+				EED0A1A123E865C1004E0D04 /* Buttons.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -286,6 +268,7 @@
 				EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */,
 				EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */,
 				EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */,
+				EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -341,7 +324,6 @@
 				EE1B3BF123B260650031A604 /* Sources */,
 				EE1B3BF223B260650031A604 /* Frameworks */,
 				EE1B3BF323B260650031A604 /* Resources */,
-				EE1B3C1223B26AFE0031A604 /* Embed Frameworks */,
 				023E2C1526E9A56E2E26511A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -490,7 +472,7 @@
 				EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */,
 				EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */,
 				EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */,
-				EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */,
+				EED0A1A223E865C1004E0D04 /* Buttons.swift in Sources */,
 				EE94A76523DB1B510030BF5F /* SubCommentCell.swift in Sources */,
 				EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */,
 				EED68F6823B64634000E4705 /* TextFieldCell.swift in Sources */,
@@ -640,6 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -668,6 +651,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

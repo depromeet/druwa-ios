@@ -28,49 +28,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     fileprivate func reloadRootViewController() {
-        guard let isOpened = KOSession.shared()?.isOpen() else {
-           return
-        }
+//        guard let isOpened = KOSession.shared()?.isOpen() else {
+//           return
+//        }
         
-        if isOpened {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            if isSignUp {
-                if let resultController: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController {
-                    self.window?.rootViewController = resultController
-                }
-            } else {
-                if let resultController: MainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
-                    self.window?.rootViewController = resultController
-                }
-            }
-        }
+//        if isOpened {
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            if isSignUp {
+//                if let resultController: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as? SignUpViewController {
+//                    self.window?.rootViewController = resultController
+//                }
+//            } else {
+//                
+//            }
+//        }
+//        if let resultController: MainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as? MainViewController {
+//            self.window?.rootViewController = resultController
+//        }
         self.window?.makeKeyAndVisible()
     }
     
-    @objc func kakaoSessionDidChangeWithNotification() {
-        reloadRootViewController()
-    }
+//    @objc func kakaoSessionDidChangeWithNotification() {
+//        reloadRootViewController()
+//    }
     
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-         if KOSession.handleOpen(url) {
-             return true
-         }
+//         if KOSession.handleOpen(url) {
+//             return true
+//         }
          return false
      }
      
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
-         if KOSession.handleOpen(url) {
-             return true
-         }
+//         if KOSession.handleOpen(url) {
+//             return true
+//         }
          return false
      }
 
      func applicationDidEnterBackground(_ application: UIApplication) {
-         KOSession.handleDidEnterBackground()
+//         KOSession.handleDidEnterBackground()
      }
 
      func applicationDidBecomeActive(_ application: UIApplication) {
-         KOSession.handleDidBecomeActive()
+//         KOSession.handleDidBecomeActive()
      }
      
 }

@@ -52,8 +52,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwy-Zo-IH6" customClass="DruwaButton" customModule="D_studio" customModuleProvider="target">
-                        <rect key="frame" x="164" y="106.5" width="89" height="29"/>
+                        <rect key="frame" x="164" y="106.5" width="121" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="RdI-Pu-m42"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <inset key="contentEdgeInsets" minX="16" minY="8" maxX="16" maxY="8"/>
                         <state key="normal" title="드라마 보러가기"/>
                     </button>
                 </subviews>

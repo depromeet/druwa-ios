@@ -78,7 +78,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case (1,1):
             return 320
         case (1,2):
-            return 48
+            return 58
         case (2,0):
             return 43
         case (2,1):
@@ -88,7 +88,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case (3...4,1):
             return 320
         case (3...4,2):
-            return 48
+            return 58
         default:
             return 0
         }
@@ -183,14 +183,14 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.postImageView.kf.setImage(with: URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-                cell.productionName.text = "모두의필름"
-                cell.DramaName.text = "고래먼지"
-                cell.likeCount.text = "123"
-                cell.summaryLabel.text = "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은"
                 cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
-                cell.dramaButton.setTitle("드라마 보러가기", for: .normal)
                 cell.selectionStyle = .none
+                cell.configurationInit(imageURL: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg",
+                                       productName: "모두의필름",
+                                       dramaName: "고래먼지",
+                                       like: "123",
+                                       summary: "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은",
+                                       buttonName: "드라마 보러가기")
                 return cell
             default:
                   return UITableViewCell()
