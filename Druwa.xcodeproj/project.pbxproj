@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		25D2670223ED3FA500BE1941 /* TabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2670023ED3FA500BE1941 /* TabButtonCell.swift */; };
 		25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D2670123ED3FA500BE1941 /* TabButtonCell.xib */; };
+		25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */; };
 		751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */; };
 		EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */; };
 		EE0D6A7D23F18CA4007A0A61 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		25D2670023ED3FA500BE1941 /* TabButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCell.swift; sourceTree = "<group>"; };
 		25D2670123ED3FA500BE1941 /* TabButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabButtonCell.xib; sourceTree = "<group>"; };
+		25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
 		3E82280B10B85EFF7E1D4C09 /* Pods-Druwa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.release.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.release.xcconfig"; sourceTree = "<group>"; };
 		710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druwa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB148A0070ED529D5F9D7028 /* Pods-Druwa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.debug.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.debug.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */,
 				EE45DDD623E6B6E20074EFEF /* String+Extension.swift */,
 				EE2D461623F780A600740E50 /* UIButton+Background.swift */,
+				25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */,
+				25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */,
 				EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */,
 				EE94A76B23DB242C0030BF5F /* ReviewCell.swift in Sources */,
 				EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */,
