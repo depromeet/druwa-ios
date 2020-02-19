@@ -26,8 +26,9 @@ class PostTableViewCell: UITableViewCell {
         DramaName.textColor = .gray0
         likeCount.font = .boldSystemFont(ofSize: 12.0)
         likeCount.textColor = .gray0
-        summaryLabel.font = .boldSystemFont(ofSize: 14.0)
+        summaryLabel.font = .systemFont(ofSize: 14.0, weight: .regular)
         summaryLabel.textColor = .gray050
+        
         dramaButton.setTitle("드라마 보러가기", for: .selected)
         dramaButton.setTitle("드라마 보러가기", for: .normal)
         dramaButton.setTitle("드라마 보러가기", for: .disabled)
@@ -42,10 +43,15 @@ class PostTableViewCell: UITableViewCell {
         productionName.text = productName
         DramaName.text = dramaName
         likeCount.text = like
-        summaryLabel.text = summary
+//        summaryLabel.text = summary
         dramaButton.setTitle(buttonName, for: .selected)
         dramaButton.setTitle(buttonName, for: .normal)
         dramaButton.setTitle(buttonName, for: .disabled)
         dramaButton.layer.cornerRadius = 4.0
+        let attrString = NSMutableAttributedString(string: summary)
+         let paragraphStyle = NSMutableParagraphStyle()
+         paragraphStyle.lineSpacing = 5
+         attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+         summaryLabel.attributedText = attrString
     }
 }
