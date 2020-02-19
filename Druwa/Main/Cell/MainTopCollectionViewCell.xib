@@ -23,6 +23,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uPx-8m-1y0">
                                 <rect key="frame" x="0.0" y="0.0" width="502" height="319"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0B8-A1-k83">
+                                <rect key="frame" x="0.0" y="0.0" width="502" height="319"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최고의 선물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiU-Ee-zi8">
                                 <rect key="frame" x="16" y="220.5" width="109.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -54,6 +57,7 @@
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="0B8-A1-k83" firstAttribute="centerY" secondItem="uPx-8m-1y0" secondAttribute="centerY" id="7X8-1p-YXz"/>
                             <constraint firstItem="ZiU-Ee-zi8" firstAttribute="top" secondItem="u2h-U6-s1v" secondAttribute="bottom" constant="8" id="C33-xd-ex7"/>
                             <constraint firstItem="uPx-8m-1y0" firstAttribute="height" secondItem="pHG-G4-yXk" secondAttribute="height" id="DgL-CU-l7T"/>
                             <constraint firstItem="ZiU-Ee-zi8" firstAttribute="leading" secondItem="pHG-G4-yXk" secondAttribute="leading" constant="16" id="Kmb-nJ-QEo"/>
@@ -61,6 +65,9 @@
                             <constraint firstItem="uPx-8m-1y0" firstAttribute="centerX" secondItem="pHG-G4-yXk" secondAttribute="centerX" id="Yws-Rg-9OL"/>
                             <constraint firstItem="uPx-8m-1y0" firstAttribute="width" secondItem="pHG-G4-yXk" secondAttribute="width" id="cgS-Ng-cd3"/>
                             <constraint firstItem="uPx-8m-1y0" firstAttribute="centerY" secondItem="pHG-G4-yXk" secondAttribute="centerY" id="e3S-Kd-ZNZ"/>
+                            <constraint firstItem="0B8-A1-k83" firstAttribute="width" secondItem="pHG-G4-yXk" secondAttribute="width" id="gJN-L0-j3o"/>
+                            <constraint firstItem="0B8-A1-k83" firstAttribute="height" secondItem="uPx-8m-1y0" secondAttribute="height" id="ief-dY-spS"/>
+                            <constraint firstItem="0B8-A1-k83" firstAttribute="centerX" secondItem="uPx-8m-1y0" secondAttribute="centerX" id="lZ4-Ib-Eb3"/>
                             <constraint firstItem="u2h-U6-s1v" firstAttribute="leading" secondItem="pHG-G4-yXk" secondAttribute="leading" constant="16" id="tn1-c4-4fE"/>
                             <constraint firstAttribute="bottom" secondItem="61G-Od-YWg" secondAttribute="bottom" constant="43" id="wd4-0p-fD6"/>
                             <constraint firstItem="61G-Od-YWg" firstAttribute="leading" secondItem="pHG-G4-yXk" secondAttribute="leading" constant="16" id="yJO-hY-hyk"/>
@@ -80,6 +87,7 @@
                 <outlet property="dramaName" destination="ZiU-Ee-zi8" id="JUR-aD-aN1"/>
                 <outlet property="episodeName" destination="oXj-Mx-60e" id="Ksi-ad-AGk"/>
                 <outlet property="genreName" destination="9FY-bA-VxY" id="LoL-gz-Pxp"/>
+                <outlet property="gradationView" destination="0B8-A1-k83" id="mOb-xt-aVr"/>
                 <outlet property="imageView" destination="uPx-8m-1y0" id="eR8-vh-TDP"/>
                 <outlet property="producitonName" destination="u2h-U6-s1v" id="CVf-aU-Qx2"/>
             </connections>

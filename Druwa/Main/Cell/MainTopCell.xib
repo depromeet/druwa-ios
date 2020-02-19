@@ -40,31 +40,23 @@
                             <constraint firstAttribute="height" constant="1" id="N3m-0i-Bfu"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xuN-9Z-s7Y">
-                        <rect key="frame" x="0.0" y="0.0" width="549" height="294"/>
-                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="xuN-9Z-s7Y" secondAttribute="bottom" id="1PK-Fg-6FA"/>
                     <constraint firstItem="dOy-53-4Ei" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5LI-pd-Mac"/>
-                    <constraint firstAttribute="trailing" secondItem="xuN-9Z-s7Y" secondAttribute="trailing" id="7n8-KG-yvp"/>
-                    <constraint firstAttribute="bottom" secondItem="dOy-53-4Ei" secondAttribute="bottom" priority="750" id="AQb-Dc-sWF"/>
                     <constraint firstAttribute="trailing" secondItem="m7T-tl-oFB" secondAttribute="trailing" id="GQO-4N-Nju"/>
                     <constraint firstAttribute="bottom" secondItem="m7T-tl-oFB" secondAttribute="bottom" id="Qbw-vB-x5t"/>
-                    <constraint firstItem="xuN-9Z-s7Y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Qc7-NB-Tnf"/>
                     <constraint firstItem="m7T-tl-oFB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="TJf-Kg-I23"/>
                     <constraint firstItem="dOy-53-4Ei" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WLu-jl-7mj"/>
                     <constraint firstAttribute="bottom" secondItem="3sV-Uh-MlL" secondAttribute="bottom" constant="20" id="YxL-Qh-OIR"/>
                     <constraint firstAttribute="trailing" secondItem="dOy-53-4Ei" secondAttribute="trailing" id="awm-YK-H5d"/>
-                    <constraint firstItem="xuN-9Z-s7Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="dDM-79-SDm"/>
                     <constraint firstItem="3sV-Uh-MlL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="lF4-vC-dZM"/>
+                    <constraint firstItem="dOy-53-4Ei" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="qwK-jC-Dc9"/>
                     <constraint firstItem="m7T-tl-oFB" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="yvS-8T-tDC"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="dOy-53-4Ei" id="PRw-Vx-k7d"/>
-                <outlet property="gradationView" destination="xuN-9Z-s7Y" id="1J8-mo-Q2l"/>
                 <outlet property="pageControl" destination="3sV-Uh-MlL" id="W7b-eR-xht"/>
             </connections>
             <point key="canvasLocation" x="296.37681159420293" y="93.080357142857139"/>
