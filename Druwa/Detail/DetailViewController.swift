@@ -9,6 +9,7 @@
 import UIKit
 import youtube_ios_player_helper_swift
 import TTADataPickerView
+import Toast_Swift
 
 
 class DetailViewController: BaseViewController {
@@ -70,6 +71,17 @@ class DetailViewController: BaseViewController {
     }
       
     @objc func pressedRightButton(sender: UIButton) {
+        // create a new style
+        var style = ToastStyle()
+
+        // this is just one of many style options
+        style.backgroundColor = .sub500
+
+        // present the toast with the new style
+        self.view.makeToast("This is a piece of toast", duration: 3.0, position: .top, style: style)
+//        view.mak
+        
+//        view.makeToast("This is a piece of toast", duration: 2.0, point: CGPoint(x: 110.0, y: 110.0))
         print("click2")
     }
     
