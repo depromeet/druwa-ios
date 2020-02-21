@@ -224,6 +224,7 @@
                         <outlet property="navigationBar" destination="6LD-6d-QzS" id="hK0-Qw-Snm"/>
                         <outlet property="tableView" destination="SjM-eQ-YC5" id="uah-XN-E1d"/>
                         <outlet property="textField" destination="lsV-YC-GCL" id="kHs-h8-HM6"/>
+                        <outlet property="textFieldBottomConstraint" destination="Qs4-aW-hWl" id="dWq-rD-ffG"/>
                         <outlet property="youtubePalyer" destination="DyM-8R-CJQ" id="q4C-Iz-4dD"/>
                     </connections>
                 </viewController>

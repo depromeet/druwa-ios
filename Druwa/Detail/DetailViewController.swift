@@ -17,6 +17,7 @@ class DetailViewController: BaseViewController {
     private var playerView: PlayerView!
     private var isComment: Bool = true
     @IBOutlet weak var bottomHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var youtubePalyer: UIView!
@@ -40,7 +41,10 @@ class DetailViewController: BaseViewController {
         playerView = UINib(nibName: "PlayerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PlayerView
         playerView.videoId = "ie8JQLLisao"
         addPlayerView()
+        NotificationCenter.default.addObserver(self, selector: #selector(didShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
     
     private func addPlayerView(){
         youtubePalyer.addSubview(playerView)
@@ -52,7 +56,7 @@ class DetailViewController: BaseViewController {
     override func setUpUI() {
         super.setUpUI()
         tableView.backgroundColor = .gray400
-    
+        tableView.separatorColor = .clear
         tableView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DramaListCell.self))
         tableView.register(UINib(nibName: String(describing: CommentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CommentCell.self))
         tableView.register(UINib(nibName: String(describing: SubCommentCell.self), bundle: nil), forCellReuseIdentifier: String(describing: SubCommentCell.self))
@@ -63,7 +67,7 @@ class DetailViewController: BaseViewController {
         tableView.register(UINib(nibName: String(describing: TabButtonCell.self), bundle: nil), forCellReuseIdentifier: String(describing: TabButtonCell.self))
         
         navigationBar.configurationLeftButton(image: "iconBack", target: self)
-        navigationBar.configurationRightButton(image: "iconBookmark", target: self)
+        navigationBar.configurationRightButton(image: "iconBookmark", target: self, isSelectedColor: .main200)
         navigationBar.configurationTitleButton(title: "EP.2", size: 17.0, color: .gray0, image: "iconDropdownDown", target: self)
     }
     
@@ -76,10 +80,25 @@ class DetailViewController: BaseViewController {
         var style = ToastStyle()
 
         // this is just one of many style options
-        style.backgroundColor = .sub500
+        style.backgroundColor = .main200
 
+        sender.isSelected = !sender.isSelected
+        
+        if sender.isSelected {
+            let templateImage = sender.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            sender.imageView?.image = templateImage
+            sender.imageView?.tintColor = .main200
+            sender.imageView?.clipsToBounds = false
+            view.makeToast("북마크에 등록되었습니다.", duration: 3.0, position: .top, style: style)
+        } else {
+            let templateImage = sender.imageView?.image?.withRenderingMode(.alwaysTemplate)
+            sender.imageView?.image = templateImage
+            sender.imageView?.tintColor = .gray0
+            sender.imageView?.clipsToBounds = false
+        }
+        
         // present the toast with the new style
-        self.view.makeToast("This is a piece of toast", duration: 3.0, position: .top, style: style)
+        
 //        view.mak
         
 //        view.makeToast("This is a piece of toast", duration: 2.0, point: CGPoint(x: 110.0, y: 110.0))
@@ -120,6 +139,29 @@ class DetailViewController: BaseViewController {
             self?.bottomHeightConstraint.constant = 80.0
             self?.isComment = false
         }
+    }
+    
+    @objc func didShow(notification: Notification) {
+        guard let info = notification.userInfo else { return }
+        guard let frameInfo = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
+        let keyboardFrame = frameInfo.cgRectValue
+        textFieldBottomConstraint.constant = -keyboardFrame.height - 1.0
+        
+    }
+
+     @objc func didHide(notification: Notification) {
+        textFieldBottomConstraint.constant = 0.0
+     }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+
+          self.view.endEditing(true)
+
     }
 }
 

@@ -50,7 +50,7 @@ class MainViewController: BaseViewController {
         tableView.register(UINib(nibName: String(describing: FooterViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FooterViewCell.self))
         
         navigationBar.configurationLeftButton(image: "iconAlarm", target: self)
-        navigationBar.configurationRightButton(image: "iconSearch", target: self)
+        navigationBar.configurationRightButton(image: "iconSearch", target: self, isSelectedColor: .gray0)
         navigationBar.configurationTitle(title: "Druwa", size: 17.0, color: .gray0)
     }
     

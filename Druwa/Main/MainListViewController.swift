@@ -35,7 +35,7 @@ class MainListViewController: BaseViewController {
         collectionView.collectionViewLayout = verticalFlowlayout
         collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
         navigationBar.configurationLeftButton(image: "iconBack", target: self)
-        navigationBar.configurationRightButton(image: "iconSearch", target: self)
+        navigationBar.configurationRightButton(image: "iconSearch", target: self, isSelectedColor: .gray0)
         navigationBar.configurationTitle(title: navigationTitle, size: 17.0, color: .gray0)
     }
     

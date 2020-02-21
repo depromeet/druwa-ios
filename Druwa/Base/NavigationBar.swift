@@ -74,9 +74,14 @@ class NavigationBar: UIView {
         }
     }
     
-    func configurationRightButton(image: String, target: Any) {
+    func configurationRightButton(image: String, target: Any, isSelectedColor: UIColor) {
+        let imageView: UIImageView = UIImageView(image: UIImage(named: image))
+        let templateImage = imageView.image?.withRenderingMode(.alwaysTemplate)
+        imageView.image = templateImage
+        imageView.tintColor = isSelectedColor
+        imageView.clipsToBounds = false
         rightButton.setImage(UIImage(named: image) , for: .normal)
-        rightButton.setImage(UIImage(named: image) , for: .selected)
+        rightButton.setImage(imageView.image , for: .selected)
         rightButton.addTarget(target, action: #selector(pressedRightButton), for: .touchUpInside)
         rightButton.snp.makeConstraints {
             $0.trailing.equalToSuperview().offset(-16.0)
