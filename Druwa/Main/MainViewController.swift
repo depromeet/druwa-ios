@@ -42,6 +42,7 @@ class MainViewController: BaseViewController {
     override func setUpUI() {
         super.setUpUI()
         tableView.backgroundColor = .gray400
+        tableView.separatorColor = .clear
         tableView.register(UINib(nibName: String(describing: MainTopCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MainTopCell.self))
         tableView.register(UINib(nibName: String(describing: EpisodeTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: EpisodeTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: PostTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PostTableViewCell.self))
@@ -144,7 +145,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.collectionView.isPagingEnabled = true
             cell.collectionView.bounces = false
             tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
-            
+            cell.selectionStyle = .none
             return cell
         case 1:
             switch indexPath.row {
@@ -244,6 +245,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.configurationButtonTitle(title: "최신 업데이트 전체보기")
                 cell.footerButton.tag = section
                 cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
+                cell.selectionStyle = .none
                 return cell
             default:
                 return UITableViewCell()
@@ -259,6 +261,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                cell.titleLabel.textColor = .gray0
                cell.titleLabel.text = "스릴러 인기 드라마"
+               cell.selectionStyle = .none
                return cell
            case 1:
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
@@ -277,6 +280,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                cell.configurationButtonTitle(title: "스릴러 장르 전체보기")
                cell.footerButton.tag = section
                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
+               cell.selectionStyle = .none
                return cell
            default:
                return UITableViewCell()
@@ -295,6 +299,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.collectionView.delegate = self
                 tagDictionary.updateValue(indexPath.section, forKey: cell.collectionView.tag)
                 cell.collectionView.reloadData()
+                cell.selectionStyle = .none
             }
         default:
             break

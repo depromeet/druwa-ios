@@ -15,6 +15,7 @@ class EpisodeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         contentView.backgroundColor = .gray400
         collectionView.backgroundColor = .gray400
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -16,7 +16,7 @@ class FooterViewCell: UITableViewCell {
         contentView.backgroundColor = .gray400
         footerButton.setTitleColor(UIColor(red: 80.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0), for: .selected)
         footerButton.setTitleColor(UIColor(red: 80.0/255.0, green: 80.0/255.0, blue: 80.0/255.0, alpha: 1.0), for: .normal)
-//        FooterButton.titleColor(<#T##self: UIButton##UIButton#>)
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
