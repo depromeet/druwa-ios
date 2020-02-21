@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25D2670223ED3FA500BE1941 /* TabButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D2670023ED3FA500BE1941 /* TabButtonCell.swift */; };
+		25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D2670123ED3FA500BE1941 /* TabButtonCell.xib */; };
+		25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */; };
 		751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */; };
+		EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */; };
+		EE0D6A7D23F18CA4007A0A61 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */; };
 		EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B3BF823B260650031A604 /* AppDelegate.swift */; };
 		EE1B3C0023B260650031A604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3BFE23B260650031A604 /* Main.storyboard */; };
 		EE1B3C0223B260670031A604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0123B260670031A604 /* Assets.xcassets */; };
 		EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1B3C0323B260670031A604 /* LaunchScreen.storyboard */; };
-		EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; };
-		EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EE1B3C0F23B26AFE0031A604 /* KakaoOpenSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */; };
 		EE1C071623DAE4BE00D0716D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071523DAE4BE00D0716D /* DetailViewController.swift */; };
 		EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071823DB077A00D0716D /* DramaListCell.swift */; };
 		EE1C071B23DB077A00D0716D /* DramaListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1C071923DB077A00D0716D /* DramaListCell.xib */; };
 		EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C071E23DB0BDE00D0716D /* CommentCell.swift */; };
 		EE1C072123DB0BDE00D0716D /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE1C071F23DB0BDE00D0716D /* CommentCell.xib */; };
+		EE2D461423F75E7800740E50 /* StarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D461223F75E7800740E50 /* StarType.swift */; };
+		EE2D461523F75E7800740E50 /* StarRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D461323F75E7800740E50 /* StarRateView.swift */; };
+		EE2D461723F780A600740E50 /* UIButton+Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D461623F780A600740E50 /* UIButton+Background.swift */; };
 		EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE45DDD623E6B6E20074EFEF /* String+Extension.swift */; };
 		EE5FE54123BCACD8008D8A15 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5FE54023BCACD8008D8A15 /* ButtonView.swift */; };
 		EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */; };
@@ -42,8 +48,9 @@
 		EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */; };
 		EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */; };
 		EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC2672423B3123B008CA938 /* MainViewController.swift */; };
+		EECF0AD323FD878B00CC7F39 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */; };
 		EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */; };
-		EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* DruwaButton.swift */; };
+		EED0A1A223E865C1004E0D04 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* Buttons.swift */; };
 		EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */; };
 		EED0A1A623E86C7A004E0D04 /* HeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */; };
 		EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */; };
@@ -57,25 +64,16 @@
 		EED68F6F23B64D8C000E4705 /* ProfileVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED68F6E23B64D8C000E4705 /* ProfileVIew.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		EE1B3C1223B26AFE0031A604 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				EE1B3C1123B26AFE0031A604 /* KakaoOpenSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		25D2670023ED3FA500BE1941 /* TabButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonCell.swift; sourceTree = "<group>"; };
+		25D2670123ED3FA500BE1941 /* TabButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabButtonCell.xib; sourceTree = "<group>"; };
+		25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+Extension.swift"; sourceTree = "<group>"; };
 		3E82280B10B85EFF7E1D4C09 /* Pods-Druwa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.release.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.release.xcconfig"; sourceTree = "<group>"; };
 		710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druwa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB148A0070ED529D5F9D7028 /* Pods-Druwa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.debug.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.debug.xcconfig"; sourceTree = "<group>"; };
-		EE1B3BF523B260650031A604 /* Druwa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Druwa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
+		EE1B3BF523B260650031A604 /* D.studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D.studio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1B3BF823B260650031A604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1B3BFF23B260650031A604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE1B3C0123B260670031A604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,6 +87,9 @@
 		EE1C071923DB077A00D0716D /* DramaListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DramaListCell.xib; sourceTree = "<group>"; };
 		EE1C071E23DB0BDE00D0716D /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		EE1C071F23DB0BDE00D0716D /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		EE2D461223F75E7800740E50 /* StarType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarType.swift; sourceTree = "<group>"; };
+		EE2D461323F75E7800740E50 /* StarRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarRateView.swift; sourceTree = "<group>"; };
+		EE2D461623F780A600740E50 /* UIButton+Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Background.swift"; sourceTree = "<group>"; };
 		EE45DDD623E6B6E20074EFEF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		EE5FE54023BCACD8008D8A15 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +112,9 @@
 		EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC2672423B3123B008CA938 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainListViewController.swift; path = Druwa/Main/MainListViewController.swift; sourceTree = SOURCE_ROOT; };
 		EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
-		EED0A1A123E865C1004E0D04 /* DruwaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DruwaButton.swift; sourceTree = "<group>"; };
+		EED0A1A123E865C1004E0D04 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
 		EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderViewCell.xib; sourceTree = "<group>"; };
 		EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewCell.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */,
-				EE1B3C1023B26AFE0031A604 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +172,7 @@
 		EE1B3BF623B260650031A604 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE1B3BF523B260650031A604 /* Druwa.app */,
+				EE1B3BF523B260650031A604 /* D.studio.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +182,7 @@
 			children = (
 				EE1B3BF823B260650031A604 /* AppDelegate.swift */,
 				EE711BDC23E47A0E00B8E0AD /* Base */,
+				EE2D461123F75E1B00740E50 /* StarView */,
 				EEB41C1623B30DC200D7C4BD /* Intro */,
 				EEB41C1823B30DF700D7C4BD /* Main */,
 				EEB41C1723B30DD300D7C4BD /* Login */,
@@ -199,6 +201,8 @@
 			children = (
 				EE1C071223DAE3CA00D0716D /* UIColor+Additions.swift */,
 				EE45DDD623E6B6E20074EFEF /* String+Extension.swift */,
+				EE2D461623F780A600740E50 /* UIButton+Background.swift */,
+				25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -215,7 +219,6 @@
 		EE1C071723DB06FC00D0716D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */,
 				EE1C071823DB077A00D0716D /* DramaListCell.swift */,
 				EE1C071923DB077A00D0716D /* DramaListCell.xib */,
 				EE1C071E23DB0BDE00D0716D /* CommentCell.swift */,
@@ -226,17 +229,30 @@
 				EE94A76A23DB242C0030BF5F /* ReviewCell.xib */,
 				EED38D3823DD377E00CE0245 /* PlayerCell.swift */,
 				EED38D3923DD377E00CE0245 /* PlayerCell.xib */,
+				25D2670023ED3FA500BE1941 /* TabButtonCell.swift */,
+				25D2670123ED3FA500BE1941 /* TabButtonCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EE2D461123F75E1B00740E50 /* StarView */ = {
+			isa = PBXGroup;
+			children = (
+				EE2D461323F75E7800740E50 /* StarRateView.swift */,
+				EE2D461223F75E7800740E50 /* StarType.swift */,
+			);
+			path = StarView;
 			sourceTree = "<group>";
 		};
 		EE711BDC23E47A0E00B8E0AD /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */,
+				EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */,
 				EE711BDD23E47A2200B8E0AD /* BaseViewController.swift */,
 				EE711BDF23E47ACE00B8E0AD /* NavigationBar.swift */,
 				EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */,
-				EED0A1A123E865C1004E0D04 /* DruwaButton.swift */,
+				EED0A1A123E865C1004E0D04 /* Buttons.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -257,6 +273,7 @@
 				EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */,
 				EED0A1A423E86C7A004E0D04 /* HeaderViewCell.xib */,
 				EED0A1A723E86C8A004E0D04 /* FooterViewCell.swift */,
+				EED0A1A823E86C8A004E0D04 /* FooterViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -282,6 +299,7 @@
 		EEB41C1823B30DF700D7C4BD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EECF0AD123FD876C00CC7F39 /* List */,
 				EEA6A79D23E454F60078A010 /* Cell */,
 				EEC2672423B3123B008CA938 /* MainViewController.swift */,
 			);
@@ -301,6 +319,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		EECF0AD123FD876C00CC7F39 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -312,7 +338,6 @@
 				EE1B3BF123B260650031A604 /* Sources */,
 				EE1B3BF223B260650031A604 /* Frameworks */,
 				EE1B3BF323B260650031A604 /* Resources */,
-				EE1B3C1223B26AFE0031A604 /* Embed Frameworks */,
 				023E2C1526E9A56E2E26511A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -321,7 +346,7 @@
 			);
 			name = Druwa;
 			productName = Druwa;
-			productReference = EE1B3BF523B260650031A604 /* Druwa.app */;
+			productReference = EE1B3BF523B260650031A604 /* D.studio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -365,7 +390,9 @@
 				EE94A76623DB1B510030BF5F /* SubCommentCell.xib in Resources */,
 				EEA6A7A123E455470078A010 /* MainTopCell.xib in Resources */,
 				EEA6A7B123E46A2F0078A010 /* EpisodeCollectionViewCell.xib in Resources */,
+				25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */,
 				EE1B3C0523B260670031A604 /* LaunchScreen.storyboard in Resources */,
+				EE0D6A7D23F18CA4007A0A61 /* PlayerView.xib in Resources */,
 				EE94A76C23DB242C0030BF5F /* ReviewCell.xib in Resources */,
 				EE1B3C0223B260670031A604 /* Assets.xcassets in Resources */,
 				EEA6A7B523E4713E0078A010 /* PostTableViewCell.xib in Resources */,
@@ -432,29 +459,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */,
+				25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */,
 				EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */,
 				EE94A76B23DB242C0030BF5F /* ReviewCell.swift in Sources */,
+				EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */,
 				EEA6A7B023E46A2F0078A010 /* EpisodeCollectionViewCell.swift in Sources */,
 				EE1C071623DAE4BE00D0716D /* DetailViewController.swift in Sources */,
 				EED68F6F23B64D8C000E4705 /* ProfileVIew.swift in Sources */,
 				EE1C071323DAE3CA00D0716D /* UIColor+Additions.swift in Sources */,
 				EE711BE023E47ACE00B8E0AD /* NavigationBar.swift in Sources */,
+				EE2D461423F75E7800740E50 /* StarType.swift in Sources */,
 				EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */,
+				25D2670223ED3FA500BE1941 /* TabButtonCell.swift in Sources */,
 				EEA6A7A623E461640078A010 /* MainTopCollectionViewCell.swift in Sources */,
 				EEB41C1A23B30E2200D7C4BD /* IntroViewController.swift in Sources */,
+				EE2D461723F780A600740E50 /* UIButton+Background.swift in Sources */,
+				EE2D461523F75E7800740E50 /* StarRateView.swift in Sources */,
 				EED68F6C23B646D1000E4705 /* TitleCell.swift in Sources */,
 				EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */,
 				EED38D3A23DD377E00CE0245 /* PlayerCell.swift in Sources */,
 				EEA6A7A023E455470078A010 /* MainTopCell.swift in Sources */,
 				EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */,
 				EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */,
+				EECF0AD323FD878B00CC7F39 /* MainListViewController.swift in Sources */,
 				EEA6A7AC23E4699E0078A010 /* EpisodeTableViewCell.swift in Sources */,
 				EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */,
 				EEA6A7B423E4713E0078A010 /* PostTableViewCell.swift in Sources */,
 				EE1C071A23DB077A00D0716D /* DramaListCell.swift in Sources */,
 				EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */,
 				EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */,
-				EED0A1A223E865C1004E0D04 /* DruwaButton.swift in Sources */,
+				EED0A1A223E865C1004E0D04 /* Buttons.swift in Sources */,
 				EE94A76523DB1B510030BF5F /* SubCommentCell.swift in Sources */,
 				EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */,
 				EED68F6823B64634000E4705 /* TextFieldCell.swift in Sources */,
@@ -604,6 +638,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,7 +654,7 @@
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leeyang.druwa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = D.studio;
 				SWIFT_OBJC_BRIDGING_HEADER = "Druwa-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -632,6 +667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,7 +683,7 @@
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = com.leeyang.druwa;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = D.studio;
 				SWIFT_OBJC_BRIDGING_HEADER = "Druwa-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

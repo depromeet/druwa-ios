@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EpisodeCollectionViewCell: UICollectionViewCell {
 
@@ -25,4 +26,9 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         dramaName.font = .systemFont(ofSize: 14.0)
     }
 
+    func configuationInit(product: String, drama: String, imageURL: String) {
+        productionName.text = product
+        dramaName.text = drama
+        imageVIew.kf.setImage(with: URL(string:imageURL)!)
+    }
 }

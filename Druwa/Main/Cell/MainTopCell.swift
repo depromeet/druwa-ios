@@ -12,12 +12,14 @@ class MainTopCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var gradationView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = .gray400
         pageControl.pageIndicatorTintColor = .gray100
         pageControl.currentPageIndicatorTintColor = .main200
+        selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

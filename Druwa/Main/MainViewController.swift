@@ -34,7 +34,7 @@ class MainViewController: BaseViewController {
         return flowLayout
     }()
     
-    var tagDictionary: [Int: Int] =  [Int: Int]()
+    private var tagDictionary: [Int: Int] =  [Int: Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -42,6 +42,7 @@ class MainViewController: BaseViewController {
     override func setUpUI() {
         super.setUpUI()
         tableView.backgroundColor = .gray400
+        tableView.separatorColor = .clear
         tableView.register(UINib(nibName: String(describing: MainTopCell.self), bundle: nil), forCellReuseIdentifier: String(describing: MainTopCell.self))
         tableView.register(UINib(nibName: String(describing: EpisodeTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: EpisodeTableViewCell.self))
         tableView.register(UINib(nibName: String(describing: PostTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: PostTableViewCell.self))
@@ -49,7 +50,7 @@ class MainViewController: BaseViewController {
         tableView.register(UINib(nibName: String(describing: FooterViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: FooterViewCell.self))
         
         navigationBar.configurationLeftButton(image: "iconAlarm", target: self)
-        navigationBar.configurationRightButton(image: "iconSearch", target: self)
+        navigationBar.configurationRightButton(image: "iconSearch", target: self, isSelectedColor: .gray0)
         navigationBar.configurationTitle(title: "Druwa", size: 17.0, color: .gray0)
     }
     
@@ -63,6 +64,23 @@ class MainViewController: BaseViewController {
     
     @objc func pressdeDetailDrama(sender: UIButton) {
         print("pressdeDetailDrama")
+    }
+    
+    @objc func pressedFooter(sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let mainListViewController = storyBoard.instantiateViewController(withIdentifier: "MainListViewController") as! MainListViewController
+        
+        switch sender.tag {
+        case 1:
+            mainListViewController.navigationTitle = "1월 인기 베스트 드라마 전체보기"
+        case 3:
+            mainListViewController.navigationTitle = "최신 업데이트 전체보기"
+        case 4:
+            mainListViewController.navigationTitle = "스릴러 장르 전체보기"
+        default:
+            break
+        }
+        navigationController?.pushViewController(mainListViewController, animated: true)
     }
 }
 
@@ -78,58 +96,36 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case (1,1):
             return 320
         case (1,2):
-            return 48
-        case (2,_):
+            return 58
+        case (2,0):
+            return 43
+        case (2,1):
             return 183
         case (3...4,0):
             return 43
         case (3...4,1):
             return 320
         case (3...4,2):
-            return 48
+            return 58
         default:
             return 0
         }
     }
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header: HeaderLabel = HeaderLabel()
-//        header.backgroundColor = .clear
-//        header.font = .boldSystemFont(ofSize: 16.0)
-//        header.textColor = .gray0
-//        switch section {
-//        case 1:
-//            let attributeString = NSMutableAttributedString(string: "1월 인기 BEST 드라마")
-//            attributeString.setColorForText("BEST", with: .main400)
-//            header.attributedText = attributeString
-//            break
-//        case 2:
-//            let attributeString = NSMutableAttributedString(string: "리뷰 TOP 화제의 인기작")
-//            attributeString.setColorForText("인기작", with: .main400)
-//            header.attributedText = attributeString
-//            break
-//        case 3:
-//            header.text = "최신 업데이트"
-//            break
-//        case 4:
-//            header.text = "스릴러 인기 드라마"
-//            break
-//        default:
-//            break
-//        }
-//        return header
-//    }
-    
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 5
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
+        case 0:
+            return 1
         case 1,3,4:
             return 3
+        case 2:
+            return 2
         default:
-            return 1
+            return 0
         }
     }
     
@@ -149,7 +145,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             cell.collectionView.isPagingEnabled = true
             cell.collectionView.bounces = false
             tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
-            
+            cell.selectionStyle = .none
             return cell
         case 1:
             switch indexPath.row {
@@ -164,38 +160,31 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 let attributeString = NSMutableAttributedString(string: "1월 인기 BEST 드라마")
                 attributeString.setColorForText("BEST", with: .main400)
                 cell.titleLabel.attributedText = attributeString
+                cell.selectionStyle = .none
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.delegate = self
-                cell.collectionView.dataSource = self
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
+                cell.selectionStyle = .none
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                     return UITableViewCell()
                 }
-                cell.footerButton.setTitle("", for: .normal)
+                cell.footerButton.setTitle("1월 인기 베스트 드라마 전체보기", for: .normal)
+                cell.selectionStyle = .none
+                cell.footerButton.tag = section
+                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
                 return cell
             default:
                 return UITableViewCell()
             }
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.postImageView.kf.setImage(with: URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-            cell.productionName.text = "모두의필름"
-            cell.likeCount.text = "123"
-            cell.summaryLabel.text = "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은"
-            cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
-            return cell
-        case 3:
             switch indexPath.row {
             case 0:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
@@ -206,25 +195,57 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                 cell.titleLabel.textColor = .gray0
                 let attributeString = NSMutableAttributedString(string: "리뷰 TOP 화제의 인기작")
-                attributeString.setColorForText("BEST", with: .main400)
+                attributeString.setColorForText("인기작", with: .main400)
                 cell.titleLabel.attributedText = attributeString
+                cell.selectionStyle = .none
+                return cell
+            case 1:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
+                    return UITableViewCell()
+                }
+                cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
+                cell.selectionStyle = .none
+                cell.configurationInit(imageURL: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg",
+                                       productName: "모두의필름",
+                                       dramaName: "고래먼지",
+                                       like: "123",
+                                       summary: "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은",
+                                       buttonName: "드라마 보러가기")
+                return cell
+            default:
+                  return UITableViewCell()
+              }
+        case 3:
+            switch indexPath.row {
+            case 0:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
+                    return UITableViewCell()
+                }
+                cell.titleLabel.text = "1"
+                cell.titleLabel.backgroundColor = .clear
+                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
+                cell.titleLabel.textColor = .gray0
+                cell.titleLabel.text = "최신 업데이트"
+                cell.selectionStyle = .none
                 return cell
             case 1:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
-                cell.collectionView.delegate = self
-                cell.collectionView.dataSource = self
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
+                cell.selectionStyle = .none
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                 return cell
             case 2:
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                    return UITableViewCell()
                 }
-                cell.footerButton.setTitle("", for: .normal)
+                cell.configurationButtonTitle(title: "최신 업데이트 전체보기")
+                cell.footerButton.tag = section
+                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
+                cell.selectionStyle = .none
                 return cell
             default:
                 return UITableViewCell()
@@ -239,24 +260,27 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                cell.titleLabel.backgroundColor = .clear
                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                cell.titleLabel.textColor = .gray0
-               cell.titleLabel.text = ""
+               cell.titleLabel.text = "스릴러 인기 드라마"
+               cell.selectionStyle = .none
                return cell
            case 1:
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                    return UITableViewCell()
                }
-               cell.collectionView.delegate = self
-               cell.collectionView.dataSource = self
                cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                cell.collectionView.tag = cell.collectionView.hashValue
                cell.collectionView.collectionViewLayout = verticalFlowlayout
+               cell.selectionStyle = .none
                tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
                return cell
            case 2:
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                   return UITableViewCell()
                }
-               cell.footerButton.setTitle("스릴러 인기 드라마", for: .normal)
+               cell.configurationButtonTitle(title: "스릴러 장르 전체보기")
+               cell.footerButton.tag = section
+               cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
+               cell.selectionStyle = .none
                return cell
            default:
                return UITableViewCell()
@@ -266,10 +290,25 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        switch section {
+        case 1,3,4:
+            if let cell = cell as? EpisodeTableViewCell {
+                cell.collectionView.dataSource = self
+                cell.collectionView.delegate = self
+                tagDictionary.updateValue(indexPath.section, forKey: cell.collectionView.tag)
+                cell.collectionView.reloadData()
+                cell.selectionStyle = .none
+            }
+        default:
+            break
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = tagDictionary[collectionView.tag]
         switch section {
@@ -326,6 +365,9 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = tagDictionary[collectionView.tag]
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController")
+        navigationController?.pushViewController(detailViewController, animated: true)
         switch section {
         case 0:
             break
@@ -343,6 +385,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let page = Int(targetContentOffset.pointee.x / self.view.frame.width)
         mainTopCell!.changeCurrentPage(page)
+
     }
     
 }

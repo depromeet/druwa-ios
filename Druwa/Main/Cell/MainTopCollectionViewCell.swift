@@ -15,6 +15,7 @@ class MainTopCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var genreName: UILabel!
     @IBOutlet weak var producitonName: UILabel!
     @IBOutlet weak var episodeName: UILabel!
+    @IBOutlet weak var gradationView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +30,12 @@ class MainTopCollectionViewCell: UICollectionViewCell {
         genreName.font = .systemFont(ofSize: 10.0)
         episodeName.textColor = .gray050
         episodeName.font = .systemFont(ofSize: 12.0)
+        
+        var colors = [UIColor]()
+        colors.append(.clear)
+        colors.append(.gray400)
+        let gradientLayer = CAGradientLayer(frame: contentView.frame, colors: colors, startPoint: CGPoint(x: 0.5, y:0.3), endPoint: CGPoint(x:0.5, y:0.9))
+        gradationView.image = gradientLayer.createGradientImage()
     }
     
     override func prepareForReuse() {
