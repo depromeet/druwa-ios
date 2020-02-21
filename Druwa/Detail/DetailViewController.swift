@@ -46,6 +46,7 @@ class DetailViewController: BaseViewController {
         youtubePalyer.addSubview(playerView)
         playerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: youtubePalyer.frame.height)
         playerView.autoresizingMask = .flexibleWidth
+        playerView.autoresizingMask = .flexibleHeight
     }
     
     override func setUpUI() {
