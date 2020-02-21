@@ -5,13 +5,14 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Intro View Controller-->
         <scene sceneID="lSE-l1-pEw">
             <objects>
-                <viewController storyboardIdentifier="IntroViewController" id="LbK-dA-OeJ" customClass="IntroViewController" customModule="Druwa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" id="LbK-dA-OeJ" customClass="IntroViewController" customModule="D_studio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SfB-z7-SjI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +57,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="8Du-RV-D98">
             <objects>
-                <viewController storyboardIdentifier="SignUpViewController" id="zIj-lR-f4t" customClass="SignUpViewController" customModule="Druwa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpViewController" id="zIj-lR-f4t" customClass="SignUpViewController" customModule="D_studio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ble-5x-Tqm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,15 +88,76 @@
             </objects>
             <point key="canvasLocation" x="1661" y="134"/>
         </scene>
+        <!--Main List View Controller-->
+        <scene sceneID="RGQ-DP-CbM">
+            <objects>
+                <viewController storyboardIdentifier="MainListViewController" id="U0k-ua-ek0" customClass="MainListViewController" customModule="D_studio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3if-Xy-TdB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OZ-K5-Ogu" customClass="NavigationBar" customModule="D_studio" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Dhf-BY-LFx"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gtR-LV-Zp6">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6xb-pq-ngk">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vCd-cQ-cYB">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IQn-h6-NH6">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="U0k-ua-ek0" id="rrK-tf-0Xr"/>
+                                    <outlet property="delegate" destination="U0k-ua-ek0" id="5wQ-T8-vNF"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gtR-LV-Zp6" firstAttribute="leading" secondItem="lBO-wg-abe" secondAttribute="leading" id="S0D-sx-XZf"/>
+                            <constraint firstItem="2OZ-K5-Ogu" firstAttribute="leading" secondItem="lBO-wg-abe" secondAttribute="leading" id="TUV-I5-fRK"/>
+                            <constraint firstItem="gtR-LV-Zp6" firstAttribute="top" secondItem="2OZ-K5-Ogu" secondAttribute="bottom" id="X62-Ju-0Z0"/>
+                            <constraint firstItem="lBO-wg-abe" firstAttribute="trailing" secondItem="gtR-LV-Zp6" secondAttribute="trailing" id="bTB-pX-hXL"/>
+                            <constraint firstItem="lBO-wg-abe" firstAttribute="bottom" secondItem="gtR-LV-Zp6" secondAttribute="bottom" id="h0U-a0-5CM"/>
+                            <constraint firstItem="lBO-wg-abe" firstAttribute="trailing" secondItem="2OZ-K5-Ogu" secondAttribute="trailing" id="nGu-s4-ghb"/>
+                            <constraint firstItem="2OZ-K5-Ogu" firstAttribute="top" secondItem="lBO-wg-abe" secondAttribute="top" id="siM-xN-1n2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lBO-wg-abe"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="gtR-LV-Zp6" id="H3I-cx-JV0"/>
+                        <outlet property="navigationBar" destination="2OZ-K5-Ogu" id="cIO-vP-4mu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mGB-WA-N3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3694" y="-99"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="ga2-vD-yhC">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="EEp-KN-pig" customClass="DetailViewController" customModule="Druwa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="EEp-KN-pig" customClass="DetailViewController" customModule="D_studio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hAb-C4-w6P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LD-6d-QzS" customClass="NavigationBar" customModule="Druwa" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LD-6d-QzS" customClass="NavigationBar" customModule="D_studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -167,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xl2-Mw-lxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3771" y="110"/>
+            <point key="canvasLocation" x="4410" y="-99"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h28-gb-8ZA">
@@ -188,7 +250,7 @@
         <!--Main View Controller-->
         <scene sceneID="oNm-Ss-F25">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="jZV-aa-zPO" customClass="MainViewController" customModule="Druwa" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="jZV-aa-zPO" customClass="MainViewController" customModule="D_studio" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cTv-Gy-yaF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +263,7 @@
                                     <outlet property="delegate" destination="jZV-aa-zPO" id="mOg-Y6-iFD"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmR-tE-36L" customClass="NavigationBar" customModule="Druwa" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YmR-tE-36L" customClass="NavigationBar" customModule="D_studio" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
@@ -383,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRL-aO-pBb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4742" y="129"/>
+            <point key="canvasLocation" x="5049" y="-102"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2Gs-Kv-Ugl">
@@ -537,7 +599,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Blv-XD-Z94" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5399" y="121"/>
+            <point key="canvasLocation" x="5707" y="-102"/>
         </scene>
     </scenes>
     <resources>

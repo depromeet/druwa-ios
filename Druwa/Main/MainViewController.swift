@@ -64,6 +64,23 @@ class MainViewController: BaseViewController {
     @objc func pressdeDetailDrama(sender: UIButton) {
         print("pressdeDetailDrama")
     }
+    
+    @objc func pressedFooter(sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let mainListViewController = storyBoard.instantiateViewController(withIdentifier: "MainListViewController") as! MainListViewController
+        
+        switch sender.tag {
+        case 1:
+            mainListViewController.navigationTitle = "1월 인기 베스트 드라마 전체보기"
+        case 3:
+            mainListViewController.navigationTitle = "최신 업데이트 전체보기"
+        case 4:
+            mainListViewController.navigationTitle = "스릴러 장르 전체보기"
+        default:
+            break
+        }
+        navigationController?.pushViewController(mainListViewController, animated: true)
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -160,6 +177,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 cell.footerButton.setTitle("1월 인기 베스트 드라마 전체보기", for: .normal)
                 cell.selectionStyle = .none
+                cell.footerButton.tag = section
+                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
                 return cell
             default:
                 return UITableViewCell()
@@ -223,6 +242,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                    return UITableViewCell()
                 }
                 cell.configurationButtonTitle(title: "최신 업데이트 전체보기")
+                cell.footerButton.tag = section
+                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
                 return cell
             default:
                 return UITableViewCell()
@@ -254,6 +275,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                   return UITableViewCell()
                }
                cell.configurationButtonTitle(title: "스릴러 장르 전체보기")
+               cell.footerButton.tag = section
+               cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
                return cell
            default:
                return UITableViewCell()

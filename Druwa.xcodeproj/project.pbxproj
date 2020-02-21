@@ -48,6 +48,7 @@
 		EEB41C1C23B30E6100D7C4BD /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */; };
 		EEB41C1E23B30E6F00D7C4BD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */; };
 		EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC2672423B3123B008CA938 /* MainViewController.swift */; };
+		EECF0AD323FD878B00CC7F39 /* MainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */; };
 		EED0A1A023E860D1004E0D04 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */; };
 		EED0A1A223E865C1004E0D04 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A123E865C1004E0D04 /* Buttons.swift */; };
 		EED0A1A523E86C7A004E0D04 /* HeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */; };
@@ -111,6 +112,7 @@
 		EEB41C1B23B30E6100D7C4BD /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EEB41C1D23B30E6F00D7C4BD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EEC2672423B3123B008CA938 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainListViewController.swift; path = Druwa/Main/MainListViewController.swift; sourceTree = SOURCE_ROOT; };
 		EED0A19F23E860D1004E0D04 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		EED0A1A123E865C1004E0D04 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewCell.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 		EEB41C1823B30DF700D7C4BD /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				EECF0AD123FD876C00CC7F39 /* List */,
 				EEA6A79D23E454F60078A010 /* Cell */,
 				EEC2672423B3123B008CA938 /* MainViewController.swift */,
 			);
@@ -314,6 +317,14 @@
 				EE5FE54023BCACD8008D8A15 /* ButtonView.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		EECF0AD123FD876C00CC7F39 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				EECF0AD223FD878B00CC7F39 /* MainListViewController.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				EEA6A7A023E455470078A010 /* MainTopCell.swift in Sources */,
 				EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */,
 				EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */,
+				EECF0AD323FD878B00CC7F39 /* MainListViewController.swift in Sources */,
 				EEA6A7AC23E4699E0078A010 /* EpisodeTableViewCell.swift in Sources */,
 				EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */,
 				EEA6A7B423E4713E0078A010 /* PostTableViewCell.swift in Sources */,
