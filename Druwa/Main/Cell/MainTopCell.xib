@@ -19,7 +19,6 @@
                 <subviews>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="dOy-53-4Ei">
                         <rect key="frame" x="0.0" y="0.0" width="549" height="293"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="dOy-53-4Ei" secondAttribute="height" multiplier="15:8" id="mc9-PM-C2a"/>
                         </constraints>

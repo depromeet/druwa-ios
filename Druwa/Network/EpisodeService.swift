@@ -16,7 +16,18 @@ class EpisodeService {
         return "https://api.druwa.site/"
     }()
     
-    func getEpisodeList(dramaId: Int, episodeId: Int, completion: @escaping([EpisodeModel]?) -> Void) {
+    func getEpisodeList(dramaId: Int, completion: @escaping([EpisodeModel]?) -> Void) {
+        let path = "dramas/\(dramaId)/episodes"
+        let headers = ["Accept":"application/json",
+                        "Content-Type": "application/json; charset=UTF-8"]
+        
+        Alamofire.request("\(host)\(path)", method: .get, parameters: nil, headers: headers).responseArray { (response: DataResponse<[EpisodeModel]>) in
+            let dramas = response.result.value
+            completion(dramas)
+        }
+    }
+    
+    func getEpisode(dramaId: Int, episodeId: Int, completion: @escaping([EpisodeModel]?) -> Void) {
         let path = "dramas/\(dramaId)/episodes/\(episodeId)"
         let headers = ["Accept":"application/json",
                         "Content-Type": "application/json; charset=UTF-8"]
@@ -26,6 +37,7 @@ class EpisodeService {
             completion(dramas)
         }
     }
+
 //    
 //    func getDramaList(index: Int, completion: @escaping([DramaModel]?) -> Void) {
 //        let path = "dramas/\(index)"

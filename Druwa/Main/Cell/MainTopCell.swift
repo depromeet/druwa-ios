@@ -19,6 +19,7 @@ class MainTopCell: UITableViewCell {
         contentView.backgroundColor = .gray400
         pageControl.pageIndicatorTintColor = .gray100
         pageControl.currentPageIndicatorTintColor = .main200
+        collectionView.backgroundColor = .clear
         selectionStyle = .none
     }
 

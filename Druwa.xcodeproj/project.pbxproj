@@ -285,9 +285,9 @@
 				EEA6A7A423E461640078A010 /* MainTopCollectionViewCell.swift */,
 				EEA6A7A523E461640078A010 /* MainTopCollectionViewCell.xib */,
 				EEA6A7AA23E4699E0078A010 /* EpisodeTableViewCell.swift */,
-				EEA6A7AB23E4699E0078A010 /* EpisodeTableViewCell.xib */,
 				EEA6A7AE23E46A2F0078A010 /* EpisodeCollectionViewCell.swift */,
 				EEA6A7AF23E46A2F0078A010 /* EpisodeCollectionViewCell.xib */,
+				EEA6A7AB23E4699E0078A010 /* EpisodeTableViewCell.xib */,
 				EEA6A7B223E4713E0078A010 /* PostTableViewCell.swift */,
 				EEA6A7B323E4713E0078A010 /* PostTableViewCell.xib */,
 				EED0A1A323E86C7A004E0D04 /* HeaderViewCell.swift */,
@@ -662,7 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -691,7 +691,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = GQ2YK62N76;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

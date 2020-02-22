@@ -164,6 +164,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
             mainTopCell = cell
+            cell.backgroundColor = .gray400
             cell.collectionView.delegate = self
             cell.collectionView.dataSource = self
             cell.collectionView.register(UINib(nibName: String(describing: MainTopCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: MainTopCollectionViewCell.self))
@@ -180,6 +181,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.titleLabel.text = "1"
                 cell.titleLabel.backgroundColor = .clear
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
@@ -193,6 +195,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
+                 cell.backgroundColor = .gray400
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
@@ -203,6 +206,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.footerButton.setTitle("1월 인기 베스트 드라마 전체보기", for: .normal)
                 cell.selectionStyle = .none
                 cell.footerButton.tag = section
@@ -217,6 +221,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.titleLabel.text = "1"
                 cell.titleLabel.backgroundColor = .clear
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
@@ -230,6 +235,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as? PostTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
                 cell.selectionStyle = .none
                 cell.configurationInit(imageURL: secondDramas?.first?.images?.first?.imageUrl ?? "",
@@ -248,6 +254,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.titleLabel.text = "1"
                 cell.titleLabel.backgroundColor = .clear
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
@@ -259,6 +266,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.collectionView.register(UINib(nibName: String(describing: EpisodeCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: EpisodeCollectionViewCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 cell.collectionView.collectionViewLayout = verticalFlowlayout
@@ -269,6 +277,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                    return UITableViewCell()
                 }
+                cell.backgroundColor = .gray400
                 cell.configurationButtonTitle(title: "최신 업데이트 전체보기")
                 cell.footerButton.tag = section
                 cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)
@@ -283,6 +292,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                    return UITableViewCell()
                }
+               cell.backgroundColor = .gray400
                cell.titleLabel.text = "1"
                cell.titleLabel.backgroundColor = .clear
                cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
@@ -304,6 +314,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: FooterViewCell.self), for: indexPath) as? FooterViewCell else {
                   return UITableViewCell()
                }
+               cell.backgroundColor = .gray400
                cell.configurationButtonTitle(title: "스릴러 장르 전체보기")
                cell.footerButton.tag = section
                cell.footerButton.addTarget(self, action: #selector(pressedFooter), for: .touchUpInside)

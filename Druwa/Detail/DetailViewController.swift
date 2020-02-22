@@ -14,6 +14,15 @@ import Toast_Swift
 
 class DetailViewController: BaseViewController {
 
+    var dramaId: Int = 0 {
+        didSet {
+            requsetEpisodeData()
+        }
+    }
+    
+    private var episodeList: [EpisodeModel]?
+    let service: EpisodeService = EpisodeService()
+    
     private var playerView: PlayerView!
     private var isComment: Bool = true
     @IBOutlet weak var bottomHeightConstraint: NSLayoutConstraint!
@@ -39,14 +48,38 @@ class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         playerView = UINib(nibName: "PlayerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? PlayerView
-        playerView.videoId = "ie8JQLLisao"
-        addPlayerView()
         NotificationCenter.default.addObserver(self, selector: #selector(didShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
     private func addPlayerView(){
+        var playurl = episodeList?.first?.playUrl ?? ""
+//        if (playurl.contains("https://www.youtube.com/watch?v=")) {
+//            playurl = playurl.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+//            
+////            let separated = playurl.characters.split(separator: " ")
+//            let urlArray: [String] = playurl.characters.split(separator: "&")
+//            if let some = urlArray.first {
+//                let value = String(some)
+//                playerView.videoId = some
+//            }
+//        } else {
+//            playurl.replacingOccurrences(of: "https://www.youtube.com/", with: "")
+//            playerView.videoId = playurl
+//        }
+        
+//        playurl.prefix
+        
+//        var arr =  str.components(separatedBy: " ")
+
+//        출처: https://zeddios.tistory.com/74 [ZeddiOS
+//        let splitArray: [String] = playurl?.split(separator: "&")
+//        splitArray.first
+
+//        let idArray = splitArray[1]!
+    
+//        playerView.videoId =
         youtubePalyer.addSubview(playerView)
         playerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: youtubePalyer.frame.height)
         playerView.autoresizingMask = .flexibleWidth
@@ -71,6 +104,7 @@ class DetailViewController: BaseViewController {
         navigationBar.configurationTitleButton(title: "EP.2", size: 17.0, color: .gray0, image: "iconDropdownDown", target: self)
     }
     
+
     @objc func pressedLeftButton(sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -100,7 +134,6 @@ class DetailViewController: BaseViewController {
     }
     
     @objc func pressedTitleButton(sender: UIButton) {
-        print("click3")
         let apperance = TTADataPickerView.appearance()
         apperance.setConfirmButtonAttributes(att: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
         apperance.setCancelButtonAttributes(att: [NSAttributedString.Key.foregroundColor: UIColor.darkGray])
@@ -113,11 +146,16 @@ class DetailViewController: BaseViewController {
         pickerView.textItemsForComponent = [["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"], ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"], ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]]
         
         pickerView.show()
-//        let pickerView = TTADataPickerView(title: "TTADataPickerView", type: .text)
-//        pickerView.textItemsForComponent = [["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eighth", "Ninth", "Tenth"]]
         
     }
-
+    
+    private func requsetEpisodeData() {
+        service.getEpisodeList(dramaId: dramaId) { model in
+            self.episodeList = model
+            self.addPlayerView()
+            self.tableView.reloadData()
+        }
+    }
     @objc func pressedCommentButtton(sender: UIButton) {
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()

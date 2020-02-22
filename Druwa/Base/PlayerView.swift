@@ -22,21 +22,6 @@ class PlayerView: UIView {
     
     
     @IBOutlet weak var ytPlayerView: YTPlayerView!
-    @IBOutlet weak var btnPlayPause: UIButton!
-    @IBOutlet weak var btnFullScreen: UIButton!
-    
-    @IBOutlet weak var timeSlider: UISlider!{
-        didSet{
-            self.timeSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
-            self.timeSlider.addTarget(self, action: #selector(startEditingSlider), for: .touchDown)
-            self.timeSlider.addTarget(self, action: #selector(stopEditingSlider), for: [.touchUpInside, .touchUpOutside])
-            self.timeSlider.value = 0.0
-        }
-    }
-    
-    @IBOutlet weak var currentTimeLabel: UILabel!
-    @IBOutlet weak var remainingTimeLabel: UILabel!
-    @IBOutlet weak var controlsView: UIView!
     
     private var isFullScreen = false
     
@@ -54,34 +39,6 @@ class PlayerView: UIView {
         ytPlayerView.delegate = self
         _ = ytPlayerView.load(videoId: videoId, playerVars: playerVars)
         ytPlayerView.isUserInteractionEnabled = false
-        updateTime()
-    }
-    
-    
-    
-    @IBAction func toogleFullScreen(sender: UIButton){
-        guard let rootVC = UIApplication.shared.delegate?.window??.rootViewController else {
-            return
-        }
-        isFullScreen = !isFullScreen
-        if isFullScreen{
-            let landscape = LandscapeViewController()
-            landscape.view = self
-            
-            rootVC.present(landscape, animated: false, completion: nil)
-        }else{
-            rootVC.presentedViewController?.dismiss(animated: false, completion: nil)
-        }
-    }
-    
-    @IBAction func playStop(sender: UIButton){
-        if ytPlayerView.playerState == .playing{
-            ytPlayerView.stopVideo()
-//            sender.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-        }else{
-            ytPlayerView.playVideo()
-//            sender.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-        }
     }
     
     func secondsToHoursMinutesSeconds (_ seconds : Int) -> (hours : Int, minutes : Int, seconds : Int) {
@@ -110,45 +67,6 @@ class PlayerView: UIView {
             return "\(self.paddedNumber(time.hours)):\(minutesSeconds)"
         }
         
-    }
-    
-    @objc func sliderValueChanged(){
-        
-        
-        let duration = ytPlayerView.duration
-        
-        let currentTime = Int(Double(self.timeSlider.value) * duration)
-        self.currentTimeLabel.text = self.ytk_secondsToCounter(currentTime)
-        
-        let timeLeft = Int(duration) - currentTime
-        self.remainingTimeLabel.text = "-\(self.ytk_secondsToCounter(timeLeft))"
-        
-    }
-    
-    @objc func stopEditingSlider(){
-        let duration = Float(ytPlayerView.duration)
-        
-        let seconds = self.timeSlider.value * duration
-        
-        self.ytPlayerView.playVideo()
-        //        self.playerView.seekTo(seconds: seconds, seekAhead: true)
-        self.ytPlayerView.seek(seekToSeconds: seconds, allowSeekAhead: true)
-    }
-    
-    @objc func startEditingSlider(){
-        self.ytPlayerView.pauseVideo()
-    }
-    
-    @objc func updateTime(){
-         let currentTime = ytPlayerView.currentTime
-        let duration = Float( ytPlayerView.duration )
-        
-        let progress = currentTime / duration
-        self.timeSlider.value = progress
-        self.timeSlider.sendActions(for: .valueChanged)
-        
-        
-        self.perform(#selector(updateTime), with: nil, afterDelay: 1.0)
     }
     
 }

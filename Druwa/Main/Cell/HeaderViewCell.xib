@@ -10,24 +10,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderViewCell" rowHeight="86" id="KGk-i7-Jjw" customClass="HeaderViewCell" customModule="Druwa" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderViewCell" rowHeight="86" id="KGk-i7-Jjw" customClass="HeaderViewCell" customModule="D_studio" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="354" height="86"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="354" height="86"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alb-xl-O8S" customClass="HeaderLabel" customModule="Druwa" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="32.5" width="354" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alb-xl-O8S" customClass="HeaderLabel" customModule="D_studio" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="86"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="alb-xl-O8S" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="1SS-lw-BIl"/>
                     <constraint firstItem="alb-xl-O8S" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="odY-HK-Lyd"/>
                     <constraint firstItem="alb-xl-O8S" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="osd-hQ-579"/>
                     <constraint firstAttribute="trailing" secondItem="alb-xl-O8S" secondAttribute="trailing" id="p0y-E4-9Vj"/>
+                    <constraint firstAttribute="bottom" secondItem="alb-xl-O8S" secondAttribute="bottom" id="wBG-6I-7tb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
