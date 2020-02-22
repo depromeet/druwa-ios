@@ -6,6 +6,8 @@ target 'Druwa' do
     
     pod 'Alamofire'
     pod 'Moya'
+    pod 'AlamofireObjectMapper'
+    pod 'ObjectMapper'
 
     pod 'SwiftyBeaver'
     
@@ -17,5 +19,6 @@ target 'Druwa' do
     pod 'Toast-Swift'
     pod 'IQKeyboardManagerSwift'
     pod 'TTADataPickerView'
+    
     
 end

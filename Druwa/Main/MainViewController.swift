@@ -13,6 +13,13 @@ class MainViewController: BaseViewController {
     @IBOutlet weak var navigationBar: NavigationBar!
     @IBOutlet weak var tableView: UITableView!
     
+    var firstDramas: [CurationModel]?
+    var secondDramas: [CurationModel]?
+    var thirdDramas: [CurationModel]?
+    var fourthDramas: [CurationModel]?
+    
+    let service: DramaService = DramaService()
+    
     var mainTopCell: MainTopCell?
     var horizenFlowlayout: UICollectionViewFlowLayout = {
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -37,6 +44,7 @@ class MainViewController: BaseViewController {
     private var tagDictionary: [Int: Int] =  [Int: Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        configuartionDataList()
     }
     
     override func setUpUI() {
@@ -52,6 +60,25 @@ class MainViewController: BaseViewController {
         navigationBar.configurationLeftButton(image: "iconAlarm", target: self)
         navigationBar.configurationRightButton(image: "iconSearch", target: self, isSelectedColor: .gray0)
         navigationBar.configurationTitle(title: "Druwa", size: 17.0, color: .gray0)
+    }
+    
+    private func configuartionDataList() {
+        service.getCurationList(index: 1) { modelList in
+            self.firstDramas = modelList
+            self.tableView.reloadData()
+        }
+        service.getCurationList(index: 2) { modelList in
+            self.secondDramas = modelList
+            self.tableView.reloadData()
+        }
+        service.getCurationList(index: 3) { modelList in
+            self.thirdDramas = modelList
+            self.tableView.reloadData()
+        }
+        service.getCurationList(index: 4) { modelList in
+            self.fourthDramas = modelList
+            self.tableView.reloadData()
+        }
     }
     
     @objc func pressedLeftButton(sender: UIButton) {
@@ -205,11 +232,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
                 }
                 cell.dramaButton.addTarget(self, action: #selector(pressdeDetailDrama), for: .touchUpInside)
                 cell.selectionStyle = .none
-                cell.configurationInit(imageURL: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg",
-                                       productName: "모두의필름",
-                                       dramaName: "고래먼지",
-                                       like: "123",
-                                       summary: "바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은 바다에 가기 위해 버스에 오른 소녀 한슬 그곳에서 한슬은",
+                cell.configurationInit(imageURL: secondDramas?.first?.images?.first?.imageUrl ?? "",
+                                       productName: secondDramas?.first?.productionCompany ?? "",
+                                       dramaName:  secondDramas?.first?.title ?? "",
+                                       like: "\(secondDramas?.first?.like ?? 0)",
+                                       summary: secondDramas?.first?.summary ?? "",
                                        buttonName: "드라마 보러가기")
                 return cell
             default:
@@ -326,36 +353,46 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MainTopCollectionViewCell.self), for: indexPath as IndexPath) as? MainTopCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.imageView.kf.setImage(with: URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
+//            cell.configurationInit(imageURL: secondDramas?.first?.images?.first?.imageUrl ?? "",
+//                                          productName: secondDramas?.first?.productionCompany ?? "",
+//                                          dramaName:  secondDramas?.first?.title ?? "",
+//                                          like: "\(secondDramas?.first?.like ?? 0)",
+//                                          summary: secondDramas?.first?.summary ?? "",
+//                                          buttonName: "드라마 보러가기")
+            let data = firstDramas?[indexPath.row]
+            cell.imageView.kf.setImage(with: URL(string: data?.images?.first?.imageUrl ?? ""))
             cell.episodeName.text = "Episode 1 ~ 12"
-            cell.genreName.text = "SF DRAMA"
-            cell.producitonName.text = "Samsung Electronics"
+            cell.genreName.text = data?.tag?.first
+            cell.producitonName.text = data?.productionCompany ?? ""
             return cell
         case 1:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EpisodeCollectionViewCell.self), for: indexPath as IndexPath) as? EpisodeCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.imageVIew.kf.setImage(with:  URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-            cell.productionName.text = "모두의필름"
-            cell.dramaName.text = "[EP.1] 당신은 동화를 믿나요"
+            let data = secondDramas?[indexPath.row]
+            cell.imageVIew.kf.setImage(with: URL(string: data?.images?.first?.imageUrl ?? ""))
+            cell.productionName.text = data?.productionCompany ?? ""
+            cell.dramaName.text = data?.title ?? ""
             cell.layer.cornerRadius = 8.0
             return cell
         case 3:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EpisodeCollectionViewCell.self), for: indexPath as IndexPath) as? EpisodeCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.imageVIew.kf.setImage(with:  URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-            cell.productionName.text = "모두의필름"
-            cell.dramaName.text = "[EP.1] 당신은 동화를 믿나요"
+            let data = thirdDramas?[indexPath.row]
+            cell.imageVIew.kf.setImage(with: URL(string: data?.images?.first?.imageUrl ?? ""))
+            cell.productionName.text = data?.productionCompany ?? ""
+            cell.dramaName.text = data?.title ?? ""
             cell.layer.cornerRadius = 8.0
             return cell
         case 4:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EpisodeCollectionViewCell.self), for: indexPath as IndexPath) as? EpisodeCollectionViewCell else {
                 return UICollectionViewCell()
             }
-            cell.imageVIew.kf.setImage(with:  URL(string: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg"))
-            cell.productionName.text = "모두의필름"
-            cell.dramaName.text = "[EP.1] 당신은 동화를 믿나요"
+            let data = fourthDramas?[indexPath.row]
+            cell.imageVIew.kf.setImage(with: URL(string: data?.images?.first?.imageUrl ?? ""))
+            cell.productionName.text = data?.productionCompany ?? ""
+            cell.dramaName.text = data?.title ?? ""
             cell.layer.cornerRadius = 8.0
             return cell
         default:

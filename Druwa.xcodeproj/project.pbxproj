@@ -11,6 +11,10 @@
 		25D2670323ED3FA500BE1941 /* TabButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25D2670123ED3FA500BE1941 /* TabButtonCell.xib */; };
 		25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FF13A923FB905400B648F3 /* CAGradientLayer+Extension.swift */; };
 		751586EAF8F9871273CD1A7A /* Pods_Druwa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */; };
+		EE0664C32400AABD003C976C /* DramaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0664C22400AABD003C976C /* DramaService.swift */; };
+		EE0664C52400AAE4003C976C /* DramaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0664C42400AAE4003C976C /* DramaModel.swift */; };
+		EE0664C82400BEAB003C976C /* EpisodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0664C72400BEAB003C976C /* EpisodeService.swift */; };
+		EE0664CA2400BEBA003C976C /* EpisodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0664C92400BEBA003C976C /* EpisodeModel.swift */; };
 		EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */; };
 		EE0D6A7D23F18CA4007A0A61 /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */; };
 		EE1B3BF923B260650031A604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1B3BF823B260650031A604 /* AppDelegate.swift */; };
@@ -71,6 +75,10 @@
 		3E82280B10B85EFF7E1D4C09 /* Pods-Druwa.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.release.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.release.xcconfig"; sourceTree = "<group>"; };
 		710692C0C4A26BFC2BEE1622 /* Pods_Druwa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Druwa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB148A0070ED529D5F9D7028 /* Pods-Druwa.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Druwa.debug.xcconfig"; path = "Target Support Files/Pods-Druwa/Pods-Druwa.debug.xcconfig"; sourceTree = "<group>"; };
+		EE0664C22400AABD003C976C /* DramaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaService.swift; sourceTree = "<group>"; };
+		EE0664C42400AAE4003C976C /* DramaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaModel.swift; sourceTree = "<group>"; };
+		EE0664C72400BEAB003C976C /* EpisodeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeService.swift; sourceTree = "<group>"; };
+		EE0664C92400BEBA003C976C /* EpisodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeModel.swift; sourceTree = "<group>"; };
 		EE0D6A7A23F18CA4007A0A61 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		EE0D6A7B23F18CA4007A0A61 /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayerView.xib; sourceTree = "<group>"; };
 		EE1B3BF523B260650031A604 /* D.studio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = D.studio.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +166,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE0664C12400AAA8003C976C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EE0664C22400AABD003C976C /* DramaService.swift */,
+				EE0664C42400AAE4003C976C /* DramaModel.swift */,
+				EE0664C72400BEAB003C976C /* EpisodeService.swift */,
+				EE0664C92400BEBA003C976C /* EpisodeModel.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		EE1B3BEC23B260650031A604 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +199,7 @@
 		EE1B3BF723B260650031A604 /* Druwa */ = {
 			isa = PBXGroup;
 			children = (
+				EE0664C12400AAA8003C976C /* Network */,
 				EE1B3BF823B260650031A604 /* AppDelegate.swift */,
 				EE711BDC23E47A0E00B8E0AD /* Base */,
 				EE2D461123F75E1B00740E50 /* StarView */,
@@ -461,6 +481,9 @@
 				EE1C072023DB0BDE00D0716D /* CommentCell.swift in Sources */,
 				25FF13AA23FB905400B648F3 /* CAGradientLayer+Extension.swift in Sources */,
 				EED0A1A923E86C8A004E0D04 /* FooterViewCell.swift in Sources */,
+				EE0664C82400BEAB003C976C /* EpisodeService.swift in Sources */,
+				EE0664C32400AABD003C976C /* DramaService.swift in Sources */,
+				EE0664CA2400BEBA003C976C /* EpisodeModel.swift in Sources */,
 				EE94A76B23DB242C0030BF5F /* ReviewCell.swift in Sources */,
 				EE0D6A7C23F18CA4007A0A61 /* PlayerView.swift in Sources */,
 				EEA6A7B023E46A2F0078A010 /* EpisodeCollectionViewCell.swift in Sources */,
@@ -481,6 +504,7 @@
 				EEA6A7A023E455470078A010 /* MainTopCell.swift in Sources */,
 				EEC2672523B3123B008CA938 /* MainViewController.swift in Sources */,
 				EE711BDE23E47A2200B8E0AD /* BaseViewController.swift in Sources */,
+				EE0664C52400AAE4003C976C /* DramaModel.swift in Sources */,
 				EECF0AD323FD878B00CC7F39 /* MainListViewController.swift in Sources */,
 				EEA6A7AC23E4699E0078A010 /* EpisodeTableViewCell.swift in Sources */,
 				EE45DDD723E6B6E20074EFEF /* String+Extension.swift in Sources */,

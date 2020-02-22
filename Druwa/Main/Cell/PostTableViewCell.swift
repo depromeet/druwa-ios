@@ -39,7 +39,9 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func configurationInit(imageURL: String, productName: String, dramaName: String, like: String, summary: String, buttonName: String) {
-        postImageView.kf.setImage(with: URL(string: imageURL)!)
+        if imageURL.count > 0 {
+            postImageView.kf.setImage(with: URL(string: imageURL)!)
+        }
         productionName.text = productName
         DramaName.text = dramaName
         likeCount.text = like

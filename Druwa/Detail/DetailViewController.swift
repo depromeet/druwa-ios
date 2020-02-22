@@ -96,13 +96,7 @@ class DetailViewController: BaseViewController {
             sender.imageView?.tintColor = .gray0
             sender.imageView?.clipsToBounds = false
         }
-        
-        // present the toast with the new style
-        
-//        view.mak
-        
-//        view.makeToast("This is a piece of toast", duration: 2.0, point: CGPoint(x: 110.0, y: 110.0))
-        print("click2")
+
     }
     
     @objc func pressedTitleButton(sender: UIButton) {
