@@ -414,20 +414,21 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = tagDictionary[collectionView.tag]
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController")
-        navigationController?.pushViewController(detailViewController, animated: true)
+        let detailViewController = storyBoard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        
         switch section {
         case 0:
-            break
+            detailViewController?.dramaId = firstDramas?[indexPath.row].dramaId ?? 0
         case 1:
-            break
+            detailViewController?.dramaId = secondDramas?[indexPath.row].dramaId ?? 0
         case 3:
-            break
+            detailViewController?.dramaId = thirdDramas?[indexPath.row].dramaId ?? 0
         case 4:
-            break
+            detailViewController?.dramaId = fourthDramas?[indexPath.row].dramaId ?? 0
         default:
             break
         }
+        navigationController?.pushViewController(detailViewController!, animated: true)
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {

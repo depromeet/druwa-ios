@@ -55,31 +55,16 @@ class DetailViewController: BaseViewController {
     
     private func addPlayerView(){
         var playurl = episodeList?.first?.playUrl ?? ""
-//        if (playurl.contains("https://www.youtube.com/watch?v=")) {
-//            playurl = playurl.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
-//            
-////            let separated = playurl.characters.split(separator: " ")
-//            let urlArray: [String] = playurl.characters.split(separator: "&")
-//            if let some = urlArray.first {
-//                let value = String(some)
-//                playerView.videoId = some
-//            }
-//        } else {
-//            playurl.replacingOccurrences(of: "https://www.youtube.com/", with: "")
-//            playerView.videoId = playurl
-//        }
-        
-//        playurl.prefix
-        
-//        var arr =  str.components(separatedBy: " ")
-
-//        출처: https://zeddios.tistory.com/74 [ZeddiOS
-//        let splitArray: [String] = playurl?.split(separator: "&")
-//        splitArray.first
-
-//        let idArray = splitArray[1]!
-    
-//        playerView.videoId =
+        if (playurl.contains("https://www.youtube.com/watch?v=")) {
+            playurl = playurl.replacingOccurrences(of: "https://www.youtube.com/watch?v=", with: "")
+            let array = playurl.components(separatedBy: "&")
+            if let some = array.first {
+                playerView.videoId = some
+            }
+        } else {
+            playurl = playurl.replacingOccurrences(of: "https://www.youtube.com/", with: "")
+            playerView.videoId = playurl
+        }
         youtubePalyer.addSubview(playerView)
         playerView.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: youtubePalyer.frame.height)
         playerView.autoresizingMask = .flexibleWidth
@@ -232,6 +217,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PlayerCell.self), for: indexPath) as? PlayerCell else {
                 return UITableViewCell()
             }
+            cell.cellModel = episodeList?.first
             return cell
          case 1:
             switch indexPath.row {
@@ -239,6 +225,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .clear
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                 cell.titleLabel.text = "다른 회차 둘러보기"
                 cell.titleLabel.textColor = .gray0
@@ -247,6 +234,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .clear
                 cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: DramaListCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
 
@@ -261,6 +249,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: HeaderViewCell.self), for: indexPath) as? HeaderViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .clear
                 cell.titleLabel.font = .boldSystemFont(ofSize: 16.0)
                 cell.titleLabel.text = "연관 드라마"
                 cell.titleLabel.textColor = .gray0
@@ -269,6 +258,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EpisodeTableViewCell.self), for: indexPath) as? EpisodeTableViewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .clear
                 cell.collectionView.register(UINib(nibName: String(describing: DramaListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: DramaListCell.self))
                 cell.collectionView.tag = cell.collectionView.hashValue
                 tagDictionary.updateValue(section, forKey: cell.collectionView.tag)
@@ -280,6 +270,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TabButtonCell.self), for: indexPath) as? TabButtonCell else {
                 return UITableViewCell()
             }
+            cell.backgroundColor = .clear
             cell.commentButtton.setTitle("Comments", for: .normal)
             cell.commentButtton.setTitle("Comments", for: .selected)
             cell.commentButtton.isSelected = isComment
@@ -297,11 +288,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                         return UITableViewCell()
                     }
                     cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", nick: "person", time: 57, comment: "서강준 갑자기 노래부르고 쓰러질때 뿜었다진짜", up: "1.67K", down: "321")
+                    cell.backgroundColor = .clear
                     return cell
                  } else if indexPath.row == 1 {
                      guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: SubCommentCell.self), for: indexPath) as? SubCommentCell else {
                          return UITableViewCell()
                      }
+                    cell.backgroundColor = .clear
                     cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", nick: "person", personNick: "person", time: 40, comment: "서강준 참 잘생겼죠. 내남자 너무 이뻐하지 말아주기...", up: "1.67K", down: "321")
                      return cell
                  }
@@ -309,6 +302,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ReviewCell.self), for: indexPath) as? ReviewCell else {
                     return UITableViewCell()
                 }
+                cell.backgroundColor = .clear
                 cell.configurationData(imageString: "https://druwa-repository-test.s3.ap-northeast-2.amazonaws.com/1234-1579626544607-446289.jpg", title: "서강준 미친 외모에 한번 놀라고, 스토리에 한번 놀라고", content: "서강준 하드캐리 원맨쇼를 원한다면 강추!", nick: "person", time: 47, rating: 4.0)
             
                 return cell

@@ -10,6 +10,11 @@ import UIKit
 
 class PlayerCell: UITableViewCell {
 
+    var cellModel: EpisodeModel? {
+        didSet {
+            configurationCellModel()
+        }
+    }
     @IBOutlet weak var episodeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -30,4 +35,11 @@ class PlayerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func configurationCellModel() {
+        episodeLabel.text = cellModel?.title
+        titleLabel.text = cellModel?.dramaTitle
+        upButton.setTitle("\(cellModel?.like ?? 0)", for: .normal)
+        downButton.setTitle("\(cellModel?.dislike ?? 0)", for: .selected)
+        summaryLabel.text = cellModel?.summary
+    }
 }
